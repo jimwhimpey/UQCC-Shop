@@ -45,6 +45,7 @@
 					var zipper		= $(this).parent().parent().find("select[name=zipper] option:selected").text();
 					var size		= $(this).parent().parent().find("select[name=size] option:selected").text();
 					var quantity	= $(this).parent().parent().find("select[name=quantity] option:selected").text();
+					var cut			= $(this).parent().parent().find("select[name=cut] option:selected").text();
 					
 					// Get the raw price number
 					price = price.replace(/^\(\$|\)/g, "");
@@ -55,7 +56,8 @@
 									"price": 	price,
 									"zipper": 	zipper,
 									"size": 	size,
-									"quantity": quantity };
+									"quantity": quantity,
+									"cut": cut };
 										
 					// Find out how many items are in the order and add this item
 					// to the next slot.
@@ -85,7 +87,7 @@
 					}
 					
 					// Add the item to the order visually
-					$("#kit-order table").append("<tr><td class='item'>" + item.name + " <span>" + item.size + " " + item.zipper + "</span></td><td class='qty'>" + item.quantity + "</td><td class='total'>" + (item.quantity * item.price).toFixed(2) + "</td></tr>");
+					$("#kit-order table").append("<tr><td class='item'>" + item.name + " <span>" + item.size + " " + item.zipper + " " + item.cut + "</span></td><td class='qty'>" + item.quantity + "</td><td class='total'>" + (item.quantity * item.price).toFixed(2) + "</td></tr>");
 					$("#kit-order table tr:last-child td").css("backgroundColor", "#FF6").animate({"backgroundColor": "#F3F3F3"}, 1000);
 					
 					// Fade the background colour off everything, sometimes they get stuck
@@ -219,6 +221,12 @@
 								<option value="3/4 Zipper">3/4 Zipper</option>
 								<option value="Short Zipper">Short Zipper</option>
 							</select></p>
+							
+						<p class="cut">	<label for="cut">Cut:</label>
+							<select name="cut">
+								<option value="Race Cut">Race Cut</option>
+								<option value="Club Cut" selected="selected">Club Cut</option>
+							</select></p>
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
@@ -266,6 +274,12 @@
 								<option value="Full Zipper">Full Zipper</option>
 								<option value="3/4 Zipper">3/4 Zipper</option>
 								<option value="Short Zipper">Short Zipper</option>
+							</select></p>
+							
+						<p class="cut">	<label for="cut">Cut:</label>
+							<select name="cut">
+								<option value="Race Cut">Race Cut</option>
+								<option value="Club Cut" selected="selected">Club Cut</option>
 							</select></p>
 						
 						<p>	<label for="size">Size:</label>
@@ -316,6 +330,12 @@
 								<option value="3/4 Zipper">3/4 Zipper</option>
 								<option value="Short Zipper">Short Zipper</option>
 							</select></p>
+							
+						<p class="cut">	<label for="cut">Cut:</label>
+							<select name="cut">
+								<option value="Race Cut">Race Cut</option>
+								<option value="Club Cut" selected="selected">Club Cut</option>
+							</select></p>
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
@@ -364,6 +384,12 @@
 								<option value="Full Zipper">Full Zipper</option>
 								<option value="3/4 Zipper">3/4 Zipper</option>
 								<option value="Short Zipper">Short Zipper</option>
+							</select></p>
+							
+						<p class="cut">	<label for="cut">Cut:</label>
+							<select name="cut">
+								<option value="Race Cut">Race Cut</option>
+								<option value="Club Cut" selected="selected">Club Cut</option>
 							</select></p>
 						
 						<p>	<label for="size">Size:</label>

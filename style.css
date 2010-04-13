@@ -132,6 +132,8 @@
 					}
 					
 					.options p.quantity { width: 60px; }
+					
+					.options p.cut { width: 80px; }
 				
 					.options label {
 						display: block;
@@ -142,6 +144,8 @@
 					.options select { width: 115px; }
 					
 						.options p.quantity select { width: 60px; }
+						
+						.options p.cut select { width: 80px; }
 					
 					.options .price { font-weight: bold; }
 				
