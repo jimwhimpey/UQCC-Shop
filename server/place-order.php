@@ -31,7 +31,7 @@
 	$orderOutput	= "==================================================\n\n";
 	// Loop through the order spitting out rows
 	foreach ($order as $item) {
-		$orderOutput .= "Item: " . $item->{'name'} . " - " . $item->{'size'} . " " . $item->{'zipper'} . "\n";
+		$orderOutput .= "Item: " . $item->{'name'} . " - " . $item->{'size'} . " " . $item->{'zipper'} . " " . $item->{'cut'} . " \n";
 		$orderOutput .= "Quantity: " . $item->{'quantity'} . "\n";
 		$orderOutput .= "Total: $" . $item->{'quantity'} * $item->{'price'} . "\n\n";
 		$total = $total + ($item->{'quantity'} * $item->{'price'});	
