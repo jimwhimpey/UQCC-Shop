@@ -111,11 +111,11 @@
 							echo "<td class='item'>" . $item->{'name'} . " ";
 							echo "<span>" . $item->{'size'} . " " . $item->{'zipper'} . "</span></td>";
 							echo "<td class='quantity'>" . $item->{'quantity'} . "</td>";
-							echo "<td class='total'>" . $item->{'quantity'} * $item->{'price'} . "</td>";
+							echo "<td class='total'>" . number_format($item->{'quantity'} * $item->{'price'}, 2) . "</td>";
 						
 						echo "</tr>";
 						
-						$total = $total + ($item->{'quantity'} * $item->{'price'});
+						$total = number_format($total + ($item->{'quantity'} * $item->{'price'}), 2);
 						
 					}
 					
