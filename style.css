@@ -1,0 +1,325 @@
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		RESET STYLES
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}:focus{outline:0}body{line-height:1;color:black;background:white}ol,ul{list-style:none}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:""""}
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		SITEWIDE STUFF
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	body { font-family: Helvetica, Arial, sans-serif; }
+
+	
+	
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		HEADER
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	#header {
+		width: 100%;
+		height: 70px;
+		background: #006699;
+		position: relative;
+		}
+		
+		#header a#logo, #header p { position: absolute; }	
+		
+		#header a#logo {
+			display: block;
+			top: 10px;
+			left: 30px;
+			width: 130px;
+			height: 80px;
+			background: url("./images/logo.png") no-repeat;
+			text-indent: -9999px;
+			}
+			
+		#header p {
+			top: 22px;
+			left: 180px;
+			font-weight: bold;
+			font-size: 24px;
+			color: #fff;
+			}
+			
+			#header p a { color: #fff; text-decoration: none; }
+			
+				#header p a:hover { color: #CCC; }
+			
+			
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		CONTENT
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	#content {
+		width: 820px;
+		margin: 30px;
+		font-size: 14px;
+		position: relative;
+		}
+		
+		.explanation { 
+			margin: 0 0 30px 0;
+			line-height: 1.6em;	
+			}
+		
+		
+		
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		KIT OPTIONS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	#kit-options {
+		position: relative;
+		width: 500px;
+		}
+		
+		.option {
+			width: 380px;
+			min-height: 100px;
+			overflow: hidden;
+			padding: 40px 0 0 120px;
+			margin: 0 0 40px 0;
+			border-top: 1px dashed #BFBFBF;
+			background-repeat: no-repeat;
+			background-position: 0 40px;
+			}
+			
+			#mens-jersey,
+			#womens-jersey { background-image: url("./images/inventory/jersey.png"); }
+			#mens-jersey-long,
+			#womens-jersey-long { background-image: url("./images/inventory/jersey-long.png"); }
+			#bib-knicks { background-image: url("./images/inventory/bib-knicks.png"); background-position: 20px 40px; }
+			#knicks { background-image: url("./images/inventory/knicks.png"); }
+			#socks { background-image: url("./images/inventory/socks.png"); }
+			#cap { background-image: url("./images/inventory/cap.png"); }
+			
+			.option h2,
+			#kit-order h2 {
+				font-size: 19px;
+				font-weight: bold;
+				margin: 0 0 20px 0;
+				}
+				
+				.option h2 span.price { color: #989898; }
+			
+			.options {
+				margin: 0 0 20px 0;
+				width: 100%;
+				overflow: hidden;
+				line-height: 1em;	
+				}
+			
+				.options p {
+					width: 115px;
+					float: left;
+					overflow: hidden;
+					margin: 0 10px 5px 0;
+					}
+					
+					.options p.quantity { width: 60px; }
+				
+					.options label {
+						display: block;
+						margin: 0 0 3px 0;
+						color: #848484;
+						}
+				
+					.options select { width: 115px; }
+					
+						.options p.quantity select { width: 60px; }
+					
+					.options .price { font-weight: bold; }
+				
+				.option .add-to-order a,
+				#place-order a {
+					display: block;
+					float: left;
+					width: 100px;
+					padding: 5px 1px;
+					text-align: center;
+					background: #0080C3;
+					border: 2px solid #006699;
+					color: #fff;
+					text-decoration: none;
+					font-weight: bold;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					}
+				
+					.option .add-to-order a:hover,
+					#place-order a:hover { background: #006EA8; }
+			
+		
+	
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		PLACE ORDER FORM
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+		
+	#kit-order {
+		width: 280px;
+		padding: 10px 10px 15px 10px ;
+		background-color: #F3F3F3;
+		border: 2px solid #DEDEDE;
+		position: fixed;
+		top: 195px;
+		left: 560px;
+		}
+		
+		#kit-order table { width: 100%;	}
+			
+			#kit-order table th {
+				font-size: 13px;
+				color: #999;
+				}
+				
+				#kit-order table td {
+					margin: 10px;
+					padding: 10px 0 0 0;
+					}
+					
+					#kit-order table .item { 
+						width: 200px;
+						font-size: 13px;
+						font-weight: bold;	
+						}
+						
+						#kit-order table .item span {
+							display: block;
+							font-weight: normal;
+							padding: 3px 0 0 0;
+							}
+					
+					#kit-order table .qty { text-align: center; }
+					
+					#kit-order table .total { text-align: right; }
+			
+			#kit-order tr#no-items td { 
+				width: 100%;
+				text-align: center;
+				font-style: italic;
+				color: #909090;	
+				padding-top: 0;
+				}
+			
+		#personal-details, 
+		#place-order,
+		#kit-order table {
+			border-top: 1px dashed #ABABAB;
+			padding: 15px 0 0 0;
+			margin: 15px 0 0 0;
+			}
+			
+			#personal-details p {
+				margin: 0 0 10px 0;
+				font-size: 12px;
+				color: #848484;
+				}
+			
+			#personal-details label { display: block; }
+			
+			#personal-details input {
+				width: 268px;
+				border: 1px solid #CCC;
+				padding: 5px;
+				}
+				
+			#place-order { position: relative; }
+			
+				#place-order a {
+					float: right;
+					background: #72BF54;
+					border: 2px solid #569340;
+					}
+				
+					#place-order a:hover { background: #5FA247; }
+					
+				#order-total {
+					display: block;
+					left: 10px;
+					top: 0;
+					font-size: 12px;
+					font-weight: bold;
+					display: none;
+					}
+					
+					#order-total span { font-weight: normal; }
+				
+			#clear-order {
+				clear: right;
+				text-align: right;
+				font-size: 12px;
+				padding: 10px 0 0 0;
+				display: none;
+				}
+				
+				#clear-order a { text-decoration: none; color: #000; }
+				
+					#clear-order a:hover { color: #B91921; }
+			
+			
+			
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		RECEIPT
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	.receipt p { 
+		line-height: 1.6em;
+		margin: 0 0 42px 0;	
+		}
+	
+	.receipt #order-meta {
+		width: 300px;
+		margin: 0 0 42px 0;
+		border-top: 1px solid #CCC;
+		border-left: 1px solid #CCC;
+		font-size: 14px;
+		}
+		
+		.receipt #order-meta td {
+			padding: 10px;
+			border-right: 1px solid #CCC;
+			border-bottom: 1px solid #CCC;
+			}
+			
+			.receipt #order-meta td.label { font-weight: bold; }
+				
+		.receipt #order-items { width: 600px; }
+			
+			.receipt #order-items th {
+				font-weight: bold;
+				padding: 10px 5px;
+				border-bottom: 2px solid #7C7C7C;
+				}
+			
+			.receipt #order-items td {
+				padding: 15px 5px;
+				font-size: 18px;
+				border-bottom: 1px solid #CFCFCF;
+				line-height: 1.4em;
+				}
+				
+				.receipt #order-items .item span {
+					display: block;
+					color: #999;
+					}
+				
+				.receipt #order-items .quantity { text-align: center; }
+				
+				.receipt #order-items .total { text-align: right; }
+				
+			.receipt #order-items #total-price td {
+				border-bottom: none;
+				}
+			
+			
+			
+			
+			
+			
+			
+			

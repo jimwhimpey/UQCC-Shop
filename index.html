@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		
+		<title>UQ Cycle Club Kit Ordering Form</title>
+	
+		<meta name="robots" content="noindex" />
+		
+		<link rel="stylesheet" type="text/css" media="screen, projection" href="style.css" />
+	
+		<script src="./scripts/utilites.js"></script>
+		<script src="./scripts/jquery.min.js"></script>
+		<script src="./scripts/jquery.color.js"></script>
+		
+		<!--[if lte IE 7]>
+			<link rel="stylesheet" type="text/css" media="screen, projection" href="ie.css" />
+			<script src="./scripts/ddbelated.js"></script>
+			<script src="./scripts/json.js"></script>
+			<script>
+			  /* EXAMPLE */
+			  DD_belatedPNG.fix('#header a, .option');
+			</script>
+		<![endif]-->
+		
+		<script type="text/javascript" charset="utf-8">
+			
+			$(function(){
+				
+				// On the page load setup the JSON object to hold the order
+				var order = new Object();	
+				
+				// Event listener for adding to the order
+				$(".add-to-order a").click(function(){
+				
+					// Get our variables
+					var id 			= $(this).parent().parent().attr("id");
+					var name		= $(this).parent().parent().find("h2 span:first-child").text();
+					var price		= $(this).parent().parent().find("h2 span.price").text();
+					var zipper		= $(this).parent().parent().find("select[name=zipper] option:selected").text();
+					var size		= $(this).parent().parent().find("select[name=size] option:selected").text();
+					var quantity	= $(this).parent().parent().find("select[name=quantity] option:selected").text();
+					
+					// Get the raw price number
+					price = price.replace(/^\(\$|\)/g, "");
+					
+					// Add them all to a JSON object
+					var item	= {	"id": 		id,
+									"name": 	name,
+									"price": 	price,
+									"zipper": 	zipper,
+									"size": 	size,
+									"quantity": quantity };
+										
+					// Find out how many items are in the order and add this item
+					// to the next slot.
+					var orderSize 	= countProperties(order);
+					var nextSlot	= orderSize + 1
+					
+					// Add the item to the order array
+					order[nextSlot] = item;
+					
+					// Add the value to a hidden form field
+					$("#order-field").attr("value", JSON.stringify(order));
+					
+					// Calculate the order total and insert it into the page
+					var total = 0;
+					for (var orderItem in order) {
+						total = total + (order[orderItem].quantity * order[orderItem].price);
+						$("#order-total span").text("$" + total);
+					}
+					
+					// If the no items row is still in there then we 
+					// want to get rid of it and add headings.
+					if ($("#no-items").length > 0) {
+						$("#no-items").remove();
+						$("#order-total").show();
+						$("#clear-order").show();
+						$("#kit-order table").append("<tr><th class='item'>Item</th><th class='qty'>Qty</th><th class='total'>Total</th></tr>");
+					}
+					
+					// Add the item to the order visually
+					$("#kit-order table").append("<tr><td class='item'>" + item.name + " <span>" + item.size + " " + item.zipper + "</span></td><td class='qty'>" + item.quantity + "</td><td class='total'>" + (item.quantity * item.price) + "</td></tr>");
+					$("#kit-order table tr:last-child td").css("backgroundColor", "#FF6").animate({"backgroundColor": "#F3F3F3"}, 1000);
+					
+					// Fade the background colour off everything, sometimes they get stuck
+					$("#kit-order table tr td").animate({"backgroundColor": "#F3F3F3"}, 1000);
+					
+					// Kill default behaviour
+					return false;
+					
+				});
+				
+				// Event Listener for clearing the order
+				$("#clear-order a").click(function(){
+				
+					$("#kit-order table tr").remove();
+					$("#kit-order table").append('<tr id="no-items"><td>No items yet.</td></tr>');
+					$("#order-total").hide();
+					$("#clear-order").hide();
+					$("#order-field").attr("value", "");
+					$("#order-total span").text("");
+					var total = 0;
+					order = new Object();
+					return false;
+					
+				});
+				
+				// Event listener for when a user clicks Place Order
+				$("#place-order a").click(function(){
+					processOrder();
+					return false;
+				});
+				
+				// Process the order form
+				function processOrder() {
+					// Check if they have some content in the order 
+					// and that they've filled out their name and email address
+					if (order[1] == undefined) {
+						alert("You can't order nothing!");
+					} else {
+						if ($("#kit-order input#name").attr("value") == "" || $("#kit-order input#email").attr("value") == "") {
+							alert("You must enter a name and email address so we know who's placing the order.");
+						} else {
+							$("#kit-order form").submit();
+						}
+					}
+				}
+				
+			});
+		
+		</script>
+	
+	</head>
+
+	<body>
+		
+		<div id="header">
+			<a href="http://uqcycle.com" id="logo">UQ Cycle Club</a>
+			<p>Kit Ordering Form</p>
+		</div>
+		
+		<div id="content">
+			
+			
+			
+			
+			
+			<p class="explanation">After placing your order you'll be given an order number which you should then 
+				use as the reference in a bank transfer to the club's account. The order will be forwarded onto the 
+				exec which will place an order when the order is large enough. We'll send you an email when your 
+				order is ready to be picked up.</p>
+			
+			
+			
+			
+			
+			<div id="kit-order">
+				
+				<h2>Your Order</h2>
+				
+				<table>
+					<tr id="no-items"><td>No items yet.</td></tr>
+				</table>
+				
+				<form action="./server/place-order.php" method="post">
+				
+					<div id="personal-details">
+					
+						<input type="hidden" name="order-field" value='' id="order-field" />
+					
+						<p><label for="name">Your Name:</label>
+							<input type="text" name="name" id="name" value="" /></p>
+					
+						<p><label for="email">Your Email Address:</label>
+							<input type="text" name="email" id="email" value="" /></p>
+					
+					</div>
+				
+					<p id="place-order">					
+						<a href="#">Place Order</a>
+						<span id="order-total">Total: <span></span></span>
+					</p>
+				
+					<p id="clear-order">
+						<a href="#">Clear Order</a>
+					</p>
+				
+				</form>
+				
+			</div>
+			
+			
+			
+			
+			
+			
+			<div id="kit-options">
+				
+				
+				
+				
+				
+				
+				<div class="option" id="mens-jersey">
+					
+					<h2><span>Men's Short Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="zipper">Zip Style:</label>
+							<select name="zipper">
+								<option value="Full Zipper">Full Zipper</option>
+								<option value="Half Zipper">Half Zipper</option>
+							</select></p>
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
+								<option value="XX Small">XX Small</option>
+							</select></p>
+						
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				<div class="option" id="womens-jersey">
+					
+					<div class="image"></div>
+					<h2><span>Women's Short Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="zipper">Zip Style:</label>
+							<select name="zipper">
+								<option value="Full Zipper">Full Zipper</option>
+								<option value="Half Zipper">Half Zipper</option>
+							</select></p>
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
+								<option value="XX Small">XX Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				<div class="option" id="bib-knicks">
+					
+					<div class="image"></div>
+					<h2><span>Bib Knicks</span> <span class="price">($95)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
+								<option value="XX Small">XX Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				<div class="option" id="knicks">
+					
+					<div class="image"></div>
+					<h2><span>Knicks</span> <span class="price">($80)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
+								<option value="XX Small">XX Small</option>
+							</select></p>
+						
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="option" id="mens-jersey-long">
+					
+					<div class="image"></div>
+					<h2><span>Men's Long Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="zipper">Zip Style:</label>
+							<select name="zipper">
+								<option value="Full Zipper">Full Zipper</option>
+								<option value="Half Zipper">Half Zipper</option>
+							</select></p>
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
+								<option value="XX Small">XX Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="option" id="womens-jersey-long">
+					
+					<div class="image"></div>
+					<h2><span>Women's Long Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="zipper">Zip Style:</label>
+							<select name="zipper">
+								<option value="Full Zipper">Full Zipper</option>
+								<option value="Half Zipper">Half Zipper</option>
+							</select></p>
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="XX Large">XX Large</option><option value="X Large">X Large</option><option value="Large">Large</option><option value="Medium">Medium</option><option value="Small">Small</option><option value="X Small">X Small</option><option value="XX Small">XX Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="option" id="cap">
+					
+					<div class="image"></div>
+					<h2><span>Cap</span> <span class="price">($15)</span></h2>
+					
+					<div class="options">
+						
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="option" id="socks">
+					
+					<div class="image"></div>
+					<h2><span>Socks</span> <span class="price">($15)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="Large">Large</option><option value="Medium">Medium</option><option value="Small">Small</option>
+							</select></p>
+						
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+			</div>
+			
+		</div>
+		
+	</body>
+	
+</html>
