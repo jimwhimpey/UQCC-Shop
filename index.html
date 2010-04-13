@@ -10,6 +10,8 @@
 		
 		<link rel="stylesheet" type="text/css" media="screen, projection" href="style.css" />
 	
+		<script src="./scripts/fancyzoom/js-global/FancyZoom.js" type="text/javascript"></script>
+		<script src="./scripts/fancyzoom/js-global/FancyZoomHTML.js" type="text/javascript"></script>
 		<script src="./scripts/utilites.js"></script>
 		<script src="./scripts/jquery.min.js"></script>
 		<script src="./scripts/jquery.color.js"></script>
@@ -27,6 +29,8 @@
 		<script type="text/javascript" charset="utf-8">
 			
 			$(function(){
+				
+				setupZoom();
 				
 				// On the page load setup the JSON object to hold the order
 				var order = new Object();	
@@ -203,27 +207,28 @@
 				
 				
 				
-				<div class="option" id="mens-jersey">
+				<div class="option">
 					
-					<h2><span>Men's Short Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					<h2><span>Men's Easter Tour Jersey</span> <span class="price">($75)</span></h2>
 					
 					<div class="options">
 						
 						<p>	<label for="zipper">Zip Style:</label>
 							<select name="zipper">
 								<option value="Full Zipper">Full Zipper</option>
-								<option value="Half Zipper">Half Zipper</option>
+								<option value="3/4 Zipper">3/4 Zipper</option>
+								<option value="Short Zipper">Short Zipper</option>
 							</select></p>
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
+								<option value="XXX Large">XXX Large</option>
 								<option value="XX Large">XX Large</option>
 								<option value="X Large">X Large</option>
 								<option value="Large">Large</option>
 								<option value="Medium" selected="selected">Medium</option>
 								<option value="Small">Small</option>
 								<option value="X Small">X Small</option>
-								<option value="XX Small">XX Small</option>
 							</select></p>
 						
 						<p class="quantity"><label for="quantity">Quantity:</label>
@@ -239,34 +244,88 @@
 					
 					<p class="add-to-order"><a href="#">Add to Order</a></p>
 					
+					<a href="./images/inventory/large/jersey-easter.jpg" class="image">
+						<img src="./images/inventory/jersey-easter.jpg" alt="Short Sleeve Jersey" />
+					</a>
+					
 				</div>
 				
 				
 				
 				
 				
-				<div class="option" id="womens-jersey">
+				<div class="option">
 					
 					<div class="image"></div>
-					<h2><span>Women's Short Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					<h2><span>Women's Easter Tour Jersey</span> <span class="price">($75)</span></h2>
 					
 					<div class="options">
 						
 						<p>	<label for="zipper">Zip Style:</label>
 							<select name="zipper">
 								<option value="Full Zipper">Full Zipper</option>
-								<option value="Half Zipper">Half Zipper</option>
+								<option value="3/4 Zipper">3/4 Zipper</option>
+								<option value="Short Zipper">Short Zipper</option>
 							</select></p>
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
+								<option value="XXX Large">XXX Large</option>
 								<option value="XX Large">XX Large</option>
 								<option value="X Large">X Large</option>
 								<option value="Large">Large</option>
 								<option value="Medium" selected="selected">Medium</option>
 								<option value="Small">Small</option>
 								<option value="X Small">X Small</option>
-								<option value="XX Small">XX Small</option>
+							</select></p>
+						
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+					<a href="./images/inventory/large/jersey-easter.jpg" class="image">
+						<img src="./images/inventory/jersey-easter.jpg" alt="Short Sleeve Jersey" />
+					</a>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				<div class="option">
+					
+					<div class="image"></div>
+					<h2><span>Men's Long Sleeve Easter Tour Jersey</span> <span class="price">($75)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="zipper">Zip Style:</label>
+							<select name="zipper">
+								<option value="Full Zipper">Full Zipper</option>
+								<option value="3/4 Zipper">3/4 Zipper</option>
+								<option value="Short Zipper">Short Zipper</option>
+							</select></p>
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="XXX Large">XXX Large</option>
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
 							</select></p>
 							
 						<p class="quantity"><label for="quantity">Quantity:</label>
@@ -282,43 +341,9 @@
 					
 					<p class="add-to-order"><a href="#">Add to Order</a></p>
 					
-				</div>
-				
-				
-				
-				
-				
-				
-				<div class="option" id="bib-knicks">
-					
-					<div class="image"></div>
-					<h2><span>Bib Knicks</span> <span class="price">($95)</span></h2>
-					
-					<div class="options">
-						
-						<p>	<label for="size">Size:</label>
-							<select name="size">
-								<option value="XX Large">XX Large</option>
-								<option value="X Large">X Large</option>
-								<option value="Large">Large</option>
-								<option value="Medium" selected="selected">Medium</option>
-								<option value="Small">Small</option>
-								<option value="X Small">X Small</option>
-								<option value="XX Small">XX Small</option>
-							</select></p>
-							
-						<p class="quantity"><label for="quantity">Quantity:</label>
-							<select name="quantity">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select></p>
-						
-					</div>
-					
-					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					<a href="./images/inventory/large/jersey-easter-long.jpg" class="image">
+						<img src="./images/inventory/jersey-easter-long.jpg" alt="Long Sleeve Jersey" />
+					</a>
 					
 				</div>
 				
@@ -327,70 +352,29 @@
 				
 				
 				
-				<div class="option" id="knicks">
+				<div class="option">
 					
 					<div class="image"></div>
-					<h2><span>Knicks</span> <span class="price">($80)</span></h2>
-					
-					<div class="options">
-						
-						<p>	<label for="size">Size:</label>
-							<select name="size">
-								<option value="XX Large">XX Large</option>
-								<option value="X Large">X Large</option>
-								<option value="Large">Large</option>
-								<option value="Medium" selected="selected">Medium</option>
-								<option value="Small">Small</option>
-								<option value="X Small">X Small</option>
-								<option value="XX Small">XX Small</option>
-							</select></p>
-						
-						<p class="quantity"><label for="quantity">Quantity:</label>
-							<select name="quantity">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select></p>
-						
-					</div>
-					
-					<p class="add-to-order"><a href="#">Add to Order</a></p>
-					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				<div class="option" id="mens-jersey-long">
-					
-					<div class="image"></div>
-					<h2><span>Men's Long Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					<h2><span>Women's Long Sleeve Easter Tour Jersey</span> <span class="price">($75)</span></h2>
 					
 					<div class="options">
 						
 						<p>	<label for="zipper">Zip Style:</label>
 							<select name="zipper">
 								<option value="Full Zipper">Full Zipper</option>
-								<option value="Half Zipper">Half Zipper</option>
+								<option value="3/4 Zipper">3/4 Zipper</option>
+								<option value="Short Zipper">Short Zipper</option>
 							</select></p>
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
+								<option value="XXX Large">XXX Large</option>
 								<option value="XX Large">XX Large</option>
 								<option value="X Large">X Large</option>
 								<option value="Large">Large</option>
 								<option value="Medium" selected="selected">Medium</option>
 								<option value="Small">Small</option>
 								<option value="X Small">X Small</option>
-								<option value="XX Small">XX Small</option>
 							</select></p>
 							
 						<p class="quantity"><label for="quantity">Quantity:</label>
@@ -406,6 +390,10 @@
 					
 					<p class="add-to-order"><a href="#">Add to Order</a></p>
 					
+					<a href="./images/inventory/large/jersey-easter-long.jpg" class="image">
+						<img src="./images/inventory/jersey-easter-long.jpg" alt="Long Sleeve Jersey" />
+					</a>
+					
 				</div>
 				
 				
@@ -413,27 +401,22 @@
 				
 				
 				
-				
-				
-				
-				
-				
-				<div class="option" id="womens-jersey-long">
+				<div class="option">
 					
 					<div class="image"></div>
-					<h2><span>Women's Long Sleeve Jersey</span> <span class="price">($60)</span></h2>
+					<h2><span>Men's Bib Knicks</span> <span class="price">($110)</span></h2>
 					
 					<div class="options">
 						
-						<p>	<label for="zipper">Zip Style:</label>
-							<select name="zipper">
-								<option value="Full Zipper">Full Zipper</option>
-								<option value="Half Zipper">Half Zipper</option>
-							</select></p>
-						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
-								<option value="XX Large">XX Large</option><option value="X Large">X Large</option><option value="Large">Large</option><option value="Medium">Medium</option><option value="Small">Small</option><option value="X Small">X Small</option><option value="XX Small">XX Small</option>
+								<option value="XXX Large">XXX Large</option>
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
 							</select></p>
 							
 						<p class="quantity"><label for="quantity">Quantity:</label>
@@ -449,34 +432,9 @@
 					
 					<p class="add-to-order"><a href="#">Add to Order</a></p>
 					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				<div class="option" id="cap">
-					
-					<div class="image"></div>
-					<h2><span>Cap</span> <span class="price">($15)</span></h2>
-					
-					<div class="options">
-						
-						<p class="quantity"><label for="quantity">Quantity:</label>
-							<select name="quantity">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select></p>
-						
-					</div>
-					
-					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					<a href="./images/inventory/large/easter-bib-knicks.jpg" class="image">
+						<img src="./images/inventory/easter-bib-knicks.jpg" alt="Bib Knicks" />
+					</a>
 					
 				</div>
 				
@@ -487,18 +445,58 @@
 				
 				
 				
-				
-				<div class="option" id="socks">
+				<div class="option">
 					
 					<div class="image"></div>
-					<h2><span>Socks</span> <span class="price">($15)</span></h2>
+					<h2><span>Women's Bib Knicks</span> <span class="price">($110)</span></h2>
 					
 					<div class="options">
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
-								<option value="Large">Large</option><option value="Medium">Medium</option><option value="Small">Small</option>
+								<option value="XXX Large">XXX Large</option>
+								<option value="XX Large">XX Large</option>
+								<option value="X Large">X Large</option>
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+								<option value="X Small">X Small</option>
 							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+					</div>
+					
+					<p class="add-to-order"><a href="#">Add to Order</a></p>
+					
+					<a href="./images/inventory/large/easter-bib-knicks.jpg" class="image">
+						<img src="./images/inventory/easter-bib-knicks.jpg" alt="Bib Knicks" />
+					</a>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="option">
+					
+					<div class="image"></div>
+					<h2><span>Lycra Shoe Covers</span> <span class="price">($30.80)</span></h2>
+					
+					<div class="options">
 						
 						<p class="quantity"><label for="quantity">Quantity:</label>
 							<select name="quantity">
@@ -513,7 +511,13 @@
 					
 					<p class="add-to-order"><a href="#">Add to Order</a></p>
 					
+					<a href="./images/inventory/large/shoe-covers.jpg" class="image">
+						<img src="./images/inventory/shoe-covers.jpg" alt="Shoe Covers" />
+					</a>
+					
 				</div>
+				
+			
 				
 				
 				

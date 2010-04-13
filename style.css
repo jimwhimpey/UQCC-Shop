@@ -78,7 +78,7 @@
 		}
 		
 		.option {
-			width: 380px;
+			width: 440px;
 			min-height: 100px;
 			overflow: hidden;
 			padding: 40px 0 0 120px;
@@ -86,7 +86,17 @@
 			border-top: 1px dashed #BFBFBF;
 			background-repeat: no-repeat;
 			background-position: 0 40px;
+			position: relative;
 			}
+			
+			.option a.image {
+				position: absolute;
+				display: block;
+				top: 30px;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				}
 			
 			#mens-jersey,
 			#womens-jersey { background-image: url("./images/inventory/jersey.png"); }
@@ -157,8 +167,8 @@
 		
 	
 /* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		PLACE ORDER FORM
-	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+			PLACE ORDER FORM
+		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 		
 	#kit-order {
 		width: 280px;
@@ -167,7 +177,7 @@
 		border: 2px solid #DEDEDE;
 		position: fixed;
 		top: 195px;
-		left: 560px;
+		left: 620px;
 		}
 		
 		#kit-order table { width: 100%;	}
