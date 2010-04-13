@@ -3,7 +3,7 @@
 	// Include ADOdb and connect to the DB
 	require("./server/adodb5/adodb.inc.php");
 	$DB = NewADOConnection('mysql');
-	$DB->Connect("localhost", "root", "", "uqshop");
+	$DB->Connect("localhost", "root", "root", "uqshop");
 	// $DB->Connect("db.segpub.net", "valhall_us1", "iloveyou182", "valhall_db4");
 	
 	// Get this order's record
@@ -55,9 +55,20 @@
 		
 		<div id="content" class="receipt">
 
-			<p>	Use your order number and your surname as the reference in a bank transfer to the club's 
-				back account (Account number 1234567, BSB 123-456, Bank of Qld). Someone will email 
-				you when your order is ready to be picked up.</p>
+			<div id="bank">
+				
+				<p>	Use your <strong>order number and your surname</strong> as the reference in a bank transfer to the club's 
+					back account:</p>
+				
+				<ul>
+					<li>Account Name: <strong>UNIVERSITY OF QUEENSLAND CYCLING CLUB</strong></li>
+					<li>Account Number: <strong>00911144</strong></li>
+					<li>BSB: <strong>064-158</strong></li>
+				</ul>
+				
+				<p>You will be emailed when your order is ready to be picked up.</p>
+					
+			</div>
 			
 			
 			<table id="order-meta">
@@ -72,6 +83,10 @@
 				<tr>
 					<td class="label">Name</td>
 					<td><?php echo $orderRecord['name']; ?></td>
+				</tr>
+				<tr>
+					<td class="label">Email</td>
+					<td><?php echo $orderRecord['email']; ?></td>
 				</tr>
 			</table>
 			
@@ -110,6 +125,16 @@
 			</table>
 			
 		</div>
+		
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-15817175-1");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
 		
 	</body>
 	

@@ -9,7 +9,7 @@
 	
 	// Connect to the DB
 	$DB = NewADOConnection('mysql');
-	$DB->Connect("localhost", "root", "", "uqshop");
+	$DB->Connect("localhost", "root", "root", "uqshop");
 	// $DB->Connect("db.segpub.net", "valhall_us1", "iloveyou182", "valhall_db4");
 	
 	// Grab all the vars we'll insert into the DB
@@ -49,8 +49,9 @@
 	$buyerContent .= "Your order is as follows: \n\n";
 	$buyerContent .= $orderOutput;
 	$buyerContent .= "Please pay for your order with a bank transfer to the club's account:\n\n";
-	$buyerContent .= "Account Number: 1234567\n";
-	$buyerContent .= "BSB: 010-352\n";
+	$buyerContent .= "Account Name: UNIVERSITY OF QUEENSLAND CYCLING CLUB\n";
+	$buyerContent .= "Account Number: 00911144\n";
+	$buyerContent .= "BSB: 064-158\n";
 	$buyerContent .= "Reference: " . $record['id'] . " and your surname\n\n";
 	$buyerContent .= "We'll be in touch when your order is ready to be picked up.\n\n";
 	$buyerContent .= "UQ Cycle Club";
@@ -67,7 +68,7 @@
 	
 	// Actually mail this stuff out the the peeps
 	mail($record['email'], "Kit Order " . $record['id'], $buyerContent, "From:UQCC Shop<tech@uqcycle.com>");
-	mail("jimwhimpey@me.com", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
+	mail("uniccclothing@gmail.com", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
 	
 	// Redirect them to a confirmation page with their order ID
 	header("Location: ../receipt.php?order=" . $record['id']);

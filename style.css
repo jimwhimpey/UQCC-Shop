@@ -276,11 +276,27 @@
 /* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		RECEIPT
 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-	
-	.receipt p { 
-		line-height: 1.6em;
-		margin: 0 0 42px 0;	
-		}
+		
+		.receipt #bank {
+			line-height: 1.6em;
+			border: 1px solid #327C26;
+			background: #CFFFE1;
+			padding: 10px 10px 0 10px;
+			width: 580px;
+			margin: 0 0 42px;
+			}
+			
+			.receipt #bank p,
+			.receipt #bank ul {
+				margin: 0 0 10px 0;
+				}
+				
+				.receipt #bank ul {
+					list-style-type: disc;
+					margin-left: 30px;
+					}
+					
+					.receipt #bank strong { font-weight: bold; }
 	
 	.receipt #order-meta {
 		width: 300px;
