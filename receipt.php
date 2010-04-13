@@ -2,9 +2,7 @@
 
 	// Include ADOdb and connect to the DB
 	require("./server/adodb5/adodb.inc.php");
-	$DB = NewADOConnection('mysql');
-	$DB->Connect("localhost", "root", "root", "uqshop");
-	// $DB->Connect("db.segpub.net", "valhall_us1", "iloveyou182", "valhall_db4");
+	require("./server/db.php");
 	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);

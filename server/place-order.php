@@ -3,14 +3,10 @@
 	// Include ADOdb and number generator
 	require("./adodb5/adodb.inc.php");
 	require("./order-number-generator.php");
+	require("./db.php");
 	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");
-	
-	// Connect to the DB
-	$DB = NewADOConnection('mysql');
-	$DB->Connect("localhost", "root", "root", "uqshop");
-	// $DB->Connect("db.segpub.net", "valhall_us1", "iloveyou182", "valhall_db4");
 	
 	// Grab all the vars we'll insert into the DB
 	$record['id']		= generateOrderNumber();
