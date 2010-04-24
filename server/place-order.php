@@ -5,6 +5,11 @@
 	require("./order-number-generator.php");
 	require("./db.php");
 	
+	// If there's no username, email or order don't do anything
+	if (empty($_POST['name']) == "" || empty($_POST['email']) == "" || empty($_POST['order-field'])) {
+		die("Order error: Either no name, email or order. How did you get here?!");
+	}
+	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");
 	

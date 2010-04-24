@@ -15,11 +15,11 @@
 		<script src="./scripts/utilites.js"></script>
 		<script src="./scripts/jquery.min.js"></script>
 		<script src="./scripts/jquery.color.js"></script>
+		<script src="./scripts/json.js"></script>
 		
 		<!--[if lte IE 7]>
 			<link rel="stylesheet" type="text/css" media="screen, projection" href="ie.css" />
 			<script src="./scripts/ddbelated.js"></script>
-			<script src="./scripts/json.js"></script>
 			<script>
 			  /* EXAMPLE */
 			  DD_belatedPNG.fix('#header a, .option');
@@ -142,6 +142,8 @@
 
 	<body>
 		
+		
+		
 		<div id="header">
 			<a href="http://uqcycle.com" id="logo">UQ Cycle Club</a>
 			<p>Kit Ordering Form</p>
@@ -150,7 +152,24 @@
 		<div id="content">
 			
 			
+			<noscript>
 			
+				<p class="noscript">It looks like you don't have Javascript turned on which is required for this 
+					site to work properly. For instructions on how to enable Javascript, 
+					select your browser from <a href="http://www.google.com/support/websearch/bin/answer.py?hl=en&amp;answer=23852">
+					this list</a>.</p>
+			
+					<style type="text/css" media="screen">
+						
+						.explanation,
+						#kit-order,
+						#kit-options {
+							display: none;
+							}
+						
+					</style>
+			
+			</noscript>
 			
 			
 			<p class="explanation">After placing your order you'll be given an order number which you should then 
