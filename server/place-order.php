@@ -6,7 +6,7 @@
 	require("./db.php");
 	
 	// If there's no username, email or order don't do anything
-	if (empty($_POST['name']) == "" || empty($_POST['email']) == "" || empty($_POST['order-field'])) {
+	if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['order-field'])) {
 		die("Order error: Either no name, email or order. How did you get here?!");
 	}
 	
