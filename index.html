@@ -135,6 +135,20 @@
 				}
 				
 			});
+			
+			// Handling the position of the order form nicely
+			// Taken from http://log.maniacalrage.net/post/553785042/sticky-sidebar-with-scrolling
+			$(window).scroll(function(){
+				// Don't do it for IE
+				if(!$.browser.msie) {
+					var position = $(window).scrollTop();
+   				if (position > 185) {
+						$("#kit-order").css({"position": "fixed", "top": "10px", "left": "620px"});
+   				} else {
+						$("#kit-order").css({"position": "absolute", "top": "95px", "left": "590px"});
+   				}
+				}
+			});
 		
 		</script>
 	

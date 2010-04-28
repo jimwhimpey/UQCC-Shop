@@ -197,9 +197,9 @@
 		padding: 10px 10px 15px 10px ;
 		background-color: #F3F3F3;
 		border: 2px solid #DEDEDE;
-		position: fixed;
-		top: 195px;
-		left: 620px;
+		position: absolute;
+		top: 95px;
+		left: 590px;
 		}
 		
 		#kit-order table { width: 100%;	}
