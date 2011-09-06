@@ -1,0 +1,383 @@
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		RESET STYLES
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}:focus{outline:0}body{line-height:1;color:black;background:white}ol,ul{list-style:none}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:""""}
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		SITEWIDE STUFF
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	body { 
+		font-family: Helvetica, Arial, sans-serif;
+		padding: 0 0 30px 0;	
+		}
+
+	
+	
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		HEADER
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+		
+	h1#header {
+		width: 100%;
+		height: 150px;
+		background: #ABD4F0 url("../images/header.png") no-repeat center center;
+		text-indent: -9999px;
+		}
+		
+	p#subheader {
+		width: 100%;
+		height: 40px;
+		background: #00204F url("../images/subheader.png") no-repeat center center;
+		text-indent: -9999px;
+		}
+			
+			
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		CONTENT
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	#content {
+		width: 820px;
+		margin: 30px auto;
+		font-size: 14px;
+		position: relative;
+		}
+		
+		.explanation { 
+			margin: 0 0 40px 0;
+			line-height: 1.6em;	
+			font-size: 16px;
+			}
+			
+		.noscript {
+			line-height: 1.6em;
+			border: 5px solid #800000;
+			background: #FFBEC9;
+			padding: 10px;
+			width: 580px;
+			margin: 0 0 42px;
+			font-size: 18px;
+			font-weight: bold;
+			color: #800000;
+			}
+			
+			.noscript a, .noscript a:visited { color: blue; }
+		
+		
+		
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		KIT OPTIONS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	#kit-options {
+		float: left;
+		position: relative;
+		width: 500px;
+		border-bottom: 1px dashed #BFBFBF;
+		margin: 0 0 60px 0;
+		}
+		
+		.option {
+			width: 340px;
+			min-height: 100px;
+			overflow: hidden;
+			padding: 30px 0 0 120px;
+			margin: 0 0 30px 0;
+			border-top: 1px dashed #BFBFBF;
+			background-repeat: no-repeat;
+			background-position: 0 40px;
+			position: relative;
+			}
+			
+			.option a.image {
+				position: absolute;
+				display: block;
+				top: 30px;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				}
+			
+			.option h2,
+			#kit-order h2 {
+				font-size: 19px;
+				font-weight: bold;
+				margin: 0 0 20px 0;
+				}
+				
+				.option h2 span.price { color: #989898; }
+			
+			.options {
+				margin: 0 0 10px 0;
+				width: 100%;
+				overflow: hidden;
+				line-height: 1em;	
+				}
+			
+				.options p {
+					width: 115px;
+					float: left;
+					overflow: hidden;
+					margin: 0 10px 5px 0;
+					}
+					
+					.options p.quantity { width: 60px; }
+					
+					.options p.cut { width: 80px; }
+				
+					.options label {
+						display: block;
+						margin: 0 0 3px 0;
+						color: #848484;
+						}
+				
+					.options select { width: 115px; }
+					
+						.options p.quantity select { width: 60px; }
+						
+						.options p.cut select { width: 80px; }
+					
+					.options .price { font-weight: bold; }
+				
+			.add-to-order { padding-top: 9px; }
+				
+				.option .add-to-order a,
+				#place-order a {
+					display: block;
+					float: left;
+					width: 100px;
+					padding: 5px 1px;
+					text-align: center;
+					background: #0080C3;
+					border: 2px solid #006699;
+					color: #fff;
+					text-decoration: none;
+					font-weight: bold;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					}
+				
+					.option .add-to-order a:hover,
+					#place-order a:hover { background: #006EA8; }
+			
+		
+	
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			PLACE ORDER FORM
+		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+		
+	#kit-order {
+		float: right;
+		width: 280px;
+		padding: 10px 10px 15px 10px ;
+		background-color: #F3F3F3;
+		border: 2px solid #DEDEDE;
+		}
+		
+		#kit-order table { width: 100%;	}
+			
+			#kit-order table th {
+				font-size: 13px;
+				color: #999;
+				}
+				
+				#kit-order table td {
+					margin: 10px;
+					padding: 10px 0 0 0;
+					}
+					
+					#kit-order table .item { 
+						width: 200px;
+						font-size: 13px;
+						font-weight: bold;	
+						}
+						
+						#kit-order table .item span {
+							display: block;
+							font-weight: normal;
+							padding: 3px 0 0 0;
+							}
+					
+					#kit-order table .qty { text-align: center; }
+					
+					#kit-order table .total { text-align: right; }
+			
+			#kit-order tr#no-items td { 
+				width: 100%;
+				text-align: center;
+				font-style: italic;
+				color: #909090;	
+				padding-top: 0;
+				}
+			
+		#personal-details, 
+		#place-order,
+		#kit-order table {
+			border-top: 1px dashed #ABABAB;
+			padding: 15px 0 0 0;
+			margin: 15px 0 0 0;
+			}
+			
+			#personal-details p {
+				margin: 0 0 10px 0;
+				font-size: 12px;
+				color: #848484;
+				}
+			
+			#personal-details label { display: block; }
+			
+			#personal-details input {
+				width: 268px;
+				border: 1px solid #CCC;
+				padding: 5px;
+				}
+				
+			#place-order { position: relative; }
+			
+				#place-order a {
+					float: right;
+					background: #72BF54;
+					border: 2px solid #569340;
+					}
+				
+					#place-order a:hover { background: #5FA247; }
+					
+				#order-total {
+					display: block;
+					left: 10px;
+					top: 0;
+					font-size: 12px;
+					font-weight: bold;
+					display: none;
+					}
+					
+					#order-total span { font-weight: normal; }
+				
+			#clear-order {
+				clear: right;
+				text-align: right;
+				font-size: 12px;
+				padding: 10px 0 0 0;
+				display: none;
+				}
+				
+				#clear-order a { text-decoration: none; color: #000; }
+				
+					#clear-order a:hover { color: #B91921; }
+			
+			
+			
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			RECEIPT
+		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+		
+	.receipt #bank {
+		line-height: 1.6em;
+		border: 1px solid #327C26;
+		background: #CFFFE1;
+		padding: 10px 10px 0 10px;
+		width: 580px;
+		margin: 0 0 42px;
+		}
+		
+		.receipt #bank p,
+		.receipt #bank ul {
+			margin: 0 0 10px 0;
+			}
+			
+			.receipt #bank ul {
+				list-style-type: disc;
+				margin-left: 30px;
+				}
+				
+				.receipt #bank strong { font-weight: bold; }
+	
+	.receipt #order-meta {
+		width: 300px;
+		margin: 0 0 42px 0;
+		border-top: 1px solid #CCC;
+		border-left: 1px solid #CCC;
+		font-size: 14px;
+		}
+		
+		.receipt #order-meta td {
+			padding: 10px;
+			border-right: 1px solid #CCC;
+			border-bottom: 1px solid #CCC;
+			}
+			
+			.receipt #order-meta td.label { font-weight: bold; }
+				
+		.receipt #order-items { width: 600px; }
+			
+			.receipt #order-items th,
+			.orders table th {
+				font-weight: bold;
+				padding: 10px 5px;
+				border-bottom: 2px solid #7C7C7C;
+				}
+			
+			.receipt #order-items td,
+			.orders table td {
+				padding: 15px 5px;
+				font-size: 18px;
+				border-bottom: 1px solid #CFCFCF;
+				line-height: 1.4em;
+				}
+				
+				.receipt #order-items .item span {
+					display: block;
+					color: #999;
+					}
+				
+				.receipt #order-items .quantity { text-align: center; }
+				
+				.receipt #order-items .total { text-align: right; }
+				
+			.receipt #order-items #total-price td {
+				border-bottom: none;
+				}
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		ORDERS Table
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */				
+	
+	.orders table td {
+		padding-right: 30px;
+		}
+	
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		FOOTER
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	#footer {
+		clear: both;
+		margin: 60px auto;
+		font-size: 12px;
+		font-style: italic;
+		color: #B3B3B3;
+		width: 820px;
+		}
+		
+		#footer a { 
+			color: #666;
+			font-style: normal;
+			text-decoration: none;
+			}
+			
+			#footer a:hover { color: #222; }
+			
+			
+			
+			
+			
+			
+			
+			
