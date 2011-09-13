@@ -19,6 +19,20 @@
 		<script src="./scripts/json.js"></script>
 		<script src="./scripts/orders.js"></script>
 		
+		<script type="text/javascript" charset="utf-8">
+			
+			$(function(){
+				// Calculate the time left to order
+				var closing = new Date(2011, 10, 1, 1, 1, 1, 1).getTime();
+				var current = new Date().getTime();
+				var secondsDifference = Math.round(closing - current);
+				var daysLeft = Math.round(secondsDifference/1000/60/60/24);
+				var daysLeftString = (daysLeft > 1) ? daysLeft + " days" : daysLeft + " day";
+				$(".explanation span span").text(daysLeftString);
+			});
+			
+		</script>
+		
 		<!--[if lt IE 7]>
 			<link rel="stylesheet" type="text/css" media="screen, projection" href="./styles/ie.css" />
 			<script src="./scripts/ddbelated.js"></script>
@@ -63,7 +77,7 @@
 			<p class="explanation">After placing your order you'll be given an order number which you should then 
 				use as the reference in a bank transfer to the club's account. The order will be forwarded onto the 
 				exec which will place an order when the order is large enough. We'll send you an email when your 
-				order is ready to be picked up.</p>
+				order is ready to be picked up. <span>Orders will close in <span></span></span>.</p>
 			
 			
 			

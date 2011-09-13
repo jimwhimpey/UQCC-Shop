@@ -53,6 +53,13 @@
 			font-size: 16px;
 			}
 			
+			.explanation span {
+				font-weight: bold;
+				color: #891A2B;
+				}
+				
+				.explanation span span { font-style: italic; }
+			
 		.noscript {
 			line-height: 1.6em;
 			border: 5px solid #800000;
