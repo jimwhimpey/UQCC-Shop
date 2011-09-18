@@ -50,9 +50,9 @@
 			</noscript>
 			
 			
-			<p class="explanation">After placing your order you'll be given an order number which must then 
-				be used as the reference in a bank transfer to the club's account. We'll email you when your 
-				order is ready to be picked up. <span>Orders will close in <span></span></span>.</p>
+			<p class="explanation">After placing your order you'll be given an order number which must 
+				be used as the reference in a bank transfer to the club's account. We'll email when your 
+				order is ready. <span>Orders close in <span></span></span>.</p>
 			
 			
 			

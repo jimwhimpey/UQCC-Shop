@@ -4,12 +4,21 @@
 	require("./server/adodb5/adodb.inc.php");
 	require("./server/db.php");
 	
+	// Change payment status
+	if ($_GET['paid'] != "") {
+		$DB->Execute("UPDATE " . $table . " SET paid = 'true' WHERE id = '" . $_GET['paid'] . "'");
+	} else if ($_GET['unpaid'] != "") {
+		$DB->Execute("UPDATE " . $table . " SET paid = 'false' WHERE id = '" . $_GET['unpaid'] . "'");
+	}
+	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);
-	$orders = $DB->GetAll("SELECT * FROM orders") or die($DB->ErrorMsg());
+	$orders = $DB->GetAll("SELECT * FROM orders1") or die($DB->ErrorMsg());
 	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");
+	
+	
 
 ?>
 
@@ -18,32 +27,13 @@
 <html lang="en">
 
 	<head>
-		
 		<title>UQ Cycle Club Kit Orders</title>
-	
-		<meta name="robots" content="noindex" />
-		
-		<link rel="stylesheet" type="text/css" media="screen, projection, print" href="style.css" />
-	
-		<script src="./scripts/jquery.min.js"></script>
-		
-		<!--[if IE 6]>
-			<link rel="stylesheet" type="text/css" media="screen, projection" href="ie.css" />
-			<script src="./scripts/ddbelated.js"></script>
-			<script>
-			  /* EXAMPLE */
-			  DD_belatedPNG.fix('#header a, .option');
-			</script>
-		<![endif]-->
-	
+		<?php require("./includes/head.php"); ?>
 	</head>
 
 	<body>
 		
-		<div id="header">
-			<a href="http://uqcycle.com" id="logo">UQ Cycle Club</a>
-			<p><a href="./">Orders</a></p>
-		</div>
+		<?php require("./includes/header.php"); ?>
 		
 		<div id="content" class="orders">			
 			
@@ -52,6 +42,7 @@
 					<th>Order ID</th>
 					<th>Date</th>
 					<th>Name</th>
+					<th>Payment Status</th>
 				</tr>
 				
 				<?php
@@ -61,7 +52,12 @@
 						echo "<tr>";
 							echo "<td><a href='receipt.php?order=" . $order['id'] . "'>" . $order['id'] . "</a></td>";
 							echo "<td>" . date("d/m/y", $order['date']) . "</td>";
-							echo "<td>" . $order['name'] . "</td>";
+							echo "<td><a href='mailto:" . $order['email'] . "'>" . $order['name'] . "</a></td>";
+							if ($order['paid'] == "false") {
+								echo "<td class='unpaid'><a href='./orders.php?paid=" . $order['id'] . "'>Unpaid</a></td>";
+							} else {
+								echo "<td class='paid'><a href='./orders.php?unpaid=" . $order['id'] . "'>Paid</a></td>";
+							}
 						echo "</tr>";
 					}
 						
@@ -71,17 +67,7 @@
 			
 		</div>
 		
-		<div id="footer">Made by <a href="http://jimwhimpey.com">Jim Whimpey</a></div>
-		
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-		try {
-		var pageTracker = _gat._getTracker("UA-15817175-1");
-		pageTracker._trackPageview();
-		} catch(err) {}</script>
+		<?php require("./includes/footer.php"); ?>
 		
 	</body>
 	

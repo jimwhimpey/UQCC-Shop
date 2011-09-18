@@ -31,14 +31,16 @@
 	p#subheader {
 		width: 100%;
 		height: 40px;
-		background: #00204F url("../images/subheader.png") no-repeat center center;
+		background: #00204F;
 		text-indent: -9999px;
 		}
 		
 		p#subheader a {
 			display: block;
-			width: 100%;
+			width: 760px;
 			height: 40px;
+			margin: 0 auto;
+			background: #00204F url("../images/subheader.png") no-repeat center left;
 			}
 			
 			
@@ -47,7 +49,7 @@
 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 	
 	#content {
-		width: 820px;
+		width: 760px;
 		margin: 30px auto;
 		font-size: 14px;
 		position: relative;
@@ -89,13 +91,13 @@
 	#kit-options {
 		float: left;
 		position: relative;
-		width: 500px;
+		width: 430px;
 		border-bottom: 1px dashed #BFBFBF;
 		margin: 0 0 60px 0;
 		}
 		
 		.option {
-			width: 340px;
+			width: 320px;
 			min-height: 100px;
 			overflow: hidden;
 			padding: 30px 0 0 120px;
@@ -289,7 +291,7 @@
 			RECEIPT
 		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 		
-	#content.receipt { width: 700px; }
+	#content.receipt { width: 760px; }
 		
 		.receipt #bank {
 			line-height: 1.6em;
@@ -363,9 +365,24 @@
 		ORDERS Table
 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */				
 	
-	.orders table td {
-		padding-right: 30px;
-		}
+	.orders table td { padding-right: 50px; }
+	
+		.orders table td a { 
+			text-decoration: none;
+			color: blue;	
+			}
+		
+			.orders table td a:hover { border-bottom: 1px solid #333; }
+	
+		.orders table td.paid a,
+		.orders table td.unpaid a {
+			font-weight: bold;
+			text-decoration: none;
+			}
+			
+			.orders table td.paid a { color: #569340; }
+			
+			.orders table td.unpaid a { color: #B91921; }
 	
 
 /* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -378,7 +395,7 @@
 		font-size: 12px;
 		font-style: italic;
 		color: #B3B3B3;
-		width: 820px;
+		width: 760px;
 		}
 		
 		#footer a { 
