@@ -1,5 +1,5 @@
 <?php
-
+	
 	// Include ADOdb and number generator
 	require("./adodb5/adodb.inc.php");
 	require("./order-number-generator.php");
@@ -21,7 +21,7 @@
 	$record['order']	= mysql_real_escape_string(json_encode($_POST['order-field']));
 
 	// Insert them all into the DB
-	$SQL = "INSERT INTO orders VALUES ('" . $record['id'] . "', " . $record['date'] . ", '" . $record['name'] . "', '" . $record['email'] . "', '" . $record['order'] . "')";
+	$SQL = "INSERT INTO orders1 VALUES ('" . $record['id'] . "', " . $record['date'] . ", '" . $record['name'] . "', '" . $record['email'] . "', '" . $record['order'] . "', 'false')";
 	$DB->Execute($SQL) or die($DB->ErrorMsg());
 	
 	// Create the order output
@@ -69,7 +69,7 @@
 	
 	// Actually mail this stuff out the the peeps
 	mail($record['email'], "Kit Order " . $record['id'], $buyerContent, "From:UQCC Shop<tech@uqcycle.com>");
-	mail("uniccclothing@gmail.com", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
+	mail("jimwhimpey@me.com", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
 	
 	// Redirect them to a confirmation page with their order ID
 	header("Location: ../receipt.php?order=" . $record['id']);

@@ -5,22 +5,11 @@
 	<head>
 		
 		<title>UQ Cycle Club Kit Ordering Form</title>
+
+		<?php require("./includes/head.php"); ?>
 	
-		<meta name="robots" content="noindex" />
-		
-		<link rel="stylesheet" type="text/css" media="screen, projection" href="./styles/style.css" />
-		<!--<link rel="stylesheet" type="text/css" media="screen, projection" href="./styles/closed.css" />-->
-	
-		<script src="./scripts/fancyzoom/js-global/FancyZoom.js" type="text/javascript"></script>
-		<script src="./scripts/fancyzoom/js-global/FancyZoomHTML.js" type="text/javascript"></script>
-		<script src="./scripts/utilites.js"></script>
-		<script src="./scripts/jquery.min.js"></script>
-		<script src="./scripts/jquery.color.js"></script>
-		<script src="./scripts/json.js"></script>
-		<script src="./scripts/orders.js"></script>
-		
 		<script type="text/javascript" charset="utf-8">
-			
+	
 			$(function(){
 				// Calculate the time left to order
 				var closing = new Date(2011, 10, 1, 1, 1, 1, 1).getTime();
@@ -30,29 +19,16 @@
 				var daysLeftString = (daysLeft > 1) ? daysLeft + " days" : daysLeft + " day";
 				$(".explanation span span").text(daysLeftString);
 			});
-			
+	
 		</script>
-		
-		<!--[if lt IE 7]>
-			<link rel="stylesheet" type="text/css" media="screen, projection" href="./styles/ie.css" />
-			<script src="./scripts/ddbelated.js"></script>
-			<script>
-			  /* EXAMPLE */
-			  DD_belatedPNG.fix('#header a, .option');
-			</script>
-		<![endif]-->
 	
 	</head>
 
 	<body>
 		
-		
-		
-		<h1 id="header">UQ Cycle Club</h1>
-		<p id="subheader">Kit Ordering Form</p>
+		<?php require("./includes/header.php"); ?>
 		
 		<div id="content">
-			
 			
 			<noscript>
 			
@@ -308,17 +284,7 @@
 			
 		</div>
 		
-		<div id="footer">Made by <a href="http://jimwhimpey.com">Jim Whimpey</a></div>
-		
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-		try {
-		var pageTracker = _gat._getTracker("UA-15817175-1");
-		pageTracker._trackPageview();
-		} catch(err) {}</script>
+		<?php require("./includes/footer.php"); ?>
 		
 	</body>
 	

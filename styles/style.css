@@ -34,6 +34,12 @@
 		background: #00204F url("../images/subheader.png") no-repeat center center;
 		text-indent: -9999px;
 		}
+		
+		p#subheader a {
+			display: block;
+			width: 100%;
+			height: 40px;
+			}
 			
 			
 /* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -283,26 +289,28 @@
 			RECEIPT
 		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 		
-	.receipt #bank {
-		line-height: 1.6em;
-		border: 1px solid #327C26;
-		background: #CFFFE1;
-		padding: 10px 10px 0 10px;
-		width: 580px;
-		margin: 0 0 42px;
-		}
+	#content.receipt { width: 700px; }
 		
-		.receipt #bank p,
-		.receipt #bank ul {
-			margin: 0 0 10px 0;
+		.receipt #bank {
+			line-height: 1.6em;
+			border: 1px solid #327C26;
+			background: #CFFFE1;
+			padding: 10px 10px 0 10px;
+			width: 100%;
+			margin: 0 0 42px;
 			}
-			
+		
+			.receipt #bank p,
 			.receipt #bank ul {
-				list-style-type: disc;
-				margin-left: 30px;
+				margin: 0 0 10px 0;
 				}
+			
+				.receipt #bank ul {
+					list-style-type: disc;
+					margin-left: 30px;
+					}
 				
-				.receipt #bank strong { font-weight: bold; }
+					.receipt #bank strong { font-weight: bold; }
 	
 	.receipt #order-meta {
 		width: 300px;

@@ -6,7 +6,8 @@
 	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);
-	$result 		= $DB->Execute("SELECT * FROM orders WHERE id = '" . $_GET['order'] . "'") or die($DB->ErrorMsg());
+	$result 		= $DB->Execute("SELECT * FROM orders1 WHERE id = '" . $_GET['order'] . "'") or die($DB->ErrorMsg());
+	
 	$orderRecord	= $result->fields;
 	$order			= stripslashes(stripslashes($result->fields['order']));
 	$order			= preg_replace('/^\"|\"$/i', "", $order);
@@ -24,32 +25,16 @@
 <html lang="en">
 
 	<head>
-		
-		<title>UQ Cycle Club Kit Ordering Form</title>
-	
-		<meta name="robots" content="noindex" />
-		
-		<link rel="stylesheet" type="text/css" media="screen, projection, print" href="style.css" />
-	
-		<script src="./scripts/jquery.min.js"></script>
-		
-		<!--[if IE 6]>
-			<link rel="stylesheet" type="text/css" media="screen, projection" href="ie.css" />
-			<script src="./scripts/ddbelated.js"></script>
-			<script>
-			  /* EXAMPLE */
-			  DD_belatedPNG.fix('#header a, .option');
-			</script>
-		<![endif]-->
-	
+		<title>UQ Cycle Club Kit Ordering Form - Receipt</title>
+		<?php require("./includes/head.php"); ?>
+		<style type="text/css" media="screen">
+			#footer { width: 700px; }
+		</style>
 	</head>
 
 	<body>
 		
-		<div id="header">
-			<a href="http://uqcycle.com" id="logo">UQ Cycle Club</a>
-			<p><a href="./">Kit Ordering Form</a></p>
-		</div>
+		<?php require("./includes/header.php"); ?>
 		
 		<div id="content" class="receipt">
 
@@ -124,17 +109,7 @@
 			
 		</div>
 		
-		<div id="footer">Made by <a href="http://jimwhimpey.com">Jim Whimpey</a></div>
-		
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-		try {
-		var pageTracker = _gat._getTracker("UA-15817175-1");
-		pageTracker._trackPageview();
-		} catch(err) {}</script>
+		<?php require("./includes/footer.php"); ?>
 		
 	</body>
 	

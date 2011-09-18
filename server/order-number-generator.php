@@ -2,6 +2,7 @@
 
 	// Function for generating a random string
 	function generateOrderNumber() {
+		echo "test";
 		$orderNumber 	= "";
 		$possible 		= "23456789ABCDEFGHJKMNPQRSTUVWXYZ"; 
 		$i 				= 0; 
