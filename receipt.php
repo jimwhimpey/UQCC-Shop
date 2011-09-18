@@ -92,7 +92,7 @@
 						echo "<tr>";
 						
 							echo "<td class='item'>" . $item->{'name'} . " ";
-							echo "<span>" . $item->{'size'} . " " . $item->{'zipper'} . " " . $item->{'cut'} . "</span></td>";
+							echo "<span>" . $item->{'size'} . "</span></td>";
 							echo "<td class='quantity'>" . $item->{'quantity'} . "</td>";
 							echo "<td class='total'>" . number_format($item->{'quantity'} * $item->{'price'}, 2) . "</td>";
 						

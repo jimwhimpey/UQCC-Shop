@@ -9,25 +9,20 @@ $(function(){
 	$(".add-to-order a").click(function(){
 	
 		// Get our variables
-		var id 			= $(this).parent().parent().parent().attr("id");
 		var name		= $(this).parent().parent().parent().find("h2 span:first-child").text();
 		var price		= $(this).parent().parent().parent().find("h2 span.price").text();
-		var zipper		= $(this).parent().parent().parent().find("select[name=zipper] option:selected").text();
 		var size		= $(this).parent().parent().parent().find("select[name=size] option:selected").text();
 		var quantity	= $(this).parent().parent().parent().find("select[name=quantity] option:selected").text();
-		var cut			= $(this).parent().parent().parent().find("select[name=cut] option:selected").text();
 		
 		// Get the raw price number
 		price = price.replace(/^\(\$|\)/g, "");
 		
 		// Add them all to a JSON object
-		var item	= {	"id": 		id,
-						"name": 	name,
+		var item	= {	"name": 	name,
 						"price": 	price,
-						"zipper": 	zipper,
 						"size": 	size,
-						"quantity": quantity,
-						"cut": cut };
+						"quantity": quantity
+						};
 							
 		// Find out how many items are in the order and add this item
 		// to the next slot.
@@ -57,7 +52,7 @@ $(function(){
 		}
 		
 		// Add the item to the order visually
-		$("#kit-order table").append("<tr><td class='item'>" + item.name + " <span>" + item.size + " " + item.zipper + " " + item.cut + "</span></td><td class='qty'>" + item.quantity + "</td><td class='total'>" + (item.quantity * item.price).toFixed(2) + "</td></tr>");
+		$("#kit-order table").append("<tr><td class='item'>" + item.name + " <span>" + item.size + "</span></td><td class='qty'>" + item.quantity + "</td><td class='total'>" + (item.quantity * item.price).toFixed(2) + "</td></tr>");
 		$("#kit-order table tr:last-child td").css("backgroundColor", "#FF6").animate({"backgroundColor": "#F3F3F3"}, 1000);
 		
 		// Fade the background colour off everything, sometimes they get stuck

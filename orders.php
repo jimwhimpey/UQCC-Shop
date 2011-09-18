@@ -37,6 +37,8 @@
 		
 		<div id="content" class="orders">			
 			
+			<h2>All Orders</h2>
+			
 			<table border="0" cellspacing="5" cellpadding="5">
 				<tr>
 					<th>Order ID</th>
