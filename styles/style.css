@@ -102,6 +102,8 @@
 		margin: 0 0 60px 0;
 		}
 		
+		#kit-options h2 { font-size: 20px; }
+		
 		.option {
 			width: 320px;
 			min-height: 100px;

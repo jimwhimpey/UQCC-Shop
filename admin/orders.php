@@ -1,8 +1,10 @@
 <?php
 
 	// Include ADOdb and connect to the DB
-	require("./server/adodb5/adodb.inc.php");
-	require("./server/db.php");
+	require("../server/adodb5/adodb.inc.php");
+	require("../server/db.php");
+	
+	ini_set("error_reporting", E_WARNING);
 	
 	// Change payment status
 	if ($_GET['paid'] != "") {
@@ -28,12 +30,12 @@
 
 	<head>
 		<title>UQ Cycle Club Kit Orders</title>
-		<?php require("./includes/head.php"); ?>
+		<?php require("../includes/head.admin.php"); ?>
 	</head>
 
 	<body>
 		
-		<?php require("./includes/header.php"); ?>
+		<?php require("../includes/header.php"); ?>
 		
 		<div id="content" class="orders">			
 			
@@ -69,7 +71,7 @@
 			
 		</div>
 		
-		<?php require("./includes/footer.php"); ?>
+		<?php require("../includes/footer.php"); ?>
 		
 	</body>
 	

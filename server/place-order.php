@@ -69,7 +69,7 @@
 	
 	// Actually mail this stuff out the the peeps
 	mail($record['email'], "Kit Order " . $record['id'], $buyerContent, "From:UQCC Shop<tech@uqcycle.com>");
-	mail("jimwhimpey@me.com", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
+	mail("tech@uqcycle.com", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
 	
 	// Redirect them to a confirmation page with their order ID
 	header("Location: ../receipt.php?order=" . $record['id']);

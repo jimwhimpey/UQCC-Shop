@@ -13,9 +13,4 @@
 
 <!--[if lt IE 7]>
 	<link rel="stylesheet" type="text/css" media="screen, projection" href="./styles/ie.css" />
-	<script src="./scripts/ddbelated.js"></script>
-	<script>
-	  /* EXAMPLE */
-	  DD_belatedPNG.fix('#header a, .option');
-	</script>
 <![endif]-->
