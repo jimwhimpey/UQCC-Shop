@@ -4,7 +4,8 @@
 	display: none;
 	}
 	
-#closed {
+.closed {
+	display: block;
 	color: #FFF;
 	background: #A30101;
 	border: 10px solid #800000;
@@ -17,5 +18,4 @@
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
 	text-align: center;
-	width: 400px;
 	}

@@ -30,6 +30,10 @@
 		
 		<div id="content">
 			
+			<div class="closed">
+				Orders Closed
+			</div>
+			
 			<noscript>
 			
 				<p class="noscript">It looks like you don't have Javascript turned on which is required for this 
