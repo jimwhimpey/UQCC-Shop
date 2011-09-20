@@ -416,18 +416,30 @@
 			CLOSED
 		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */		
 			
-		.closed {
-			display: none;
-			}
+		.closed { display: none; }
 
 
 /* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			FOOTER
 		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 	
+		.sizing {
+			clear: both;
+			width: 760px;
+			margin: 15px auto 0 auto;
+			font-size: 12px;
+			}
+			
+			.sizing a {
+				text-decoration: none;
+				color: #999;
+				}
+				
+				.sizing a:hover { color: #000; }
+	
 		#footer {
 			clear: both;
-			margin: 60px auto;
+			margin: 20px auto;
 			font-size: 12px;
 			font-style: italic;
 			color: #B3B3B3;

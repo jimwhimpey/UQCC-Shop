@@ -276,7 +276,6 @@
 				</div>
 				
 				
-				
 			
 				
 				
@@ -286,7 +285,14 @@
 				
 			</div>
 			
+			
+			
+			
 		</div>
+		
+		
+		<p class="sizing"><a href="http://tineli.com.au/custom-design-clothing/size-guide.php">See here for sizing information</a></p>
+		
 		
 		<?php require("./includes/footer.php"); ?>
 		
