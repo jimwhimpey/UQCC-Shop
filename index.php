@@ -111,7 +111,7 @@
 				
 				<div class="option">
 					
-					<h2><span>Men's Jersey</span> <span class="price">($75)</span></h2>
+					<h2><span>Men's Jersey</span> <span class="price">($80)</span></h2>
 					
 					<div class="options">
 						
@@ -152,7 +152,7 @@
 				<div class="option">
 					
 					<div class="image"></div>
-					<h2><span>Women's Jersey</span> <span class="price">($75)</span></h2>
+					<h2><span>Women's Jersey</span> <span class="price">($80)</span></h2>
 					
 					<div class="options">
 						
@@ -197,7 +197,7 @@
 				<div class="option">
 					
 					<div class="image"></div>
-					<h2><span>Men's Bib Knicks</span> <span class="price">($110)</span></h2>
+					<h2><span>Men's Bib Knicks</span> <span class="price">($90)</span></h2>
 					
 					<div class="options">
 						
@@ -241,7 +241,7 @@
 				<div class="option">
 					
 					<div class="image"></div>
-					<h2><span>Women's Bib Knicks</span> <span class="price">($110)</span></h2>
+					<h2><span>Women's Bib Knicks</span> <span class="price">($90)</span></h2>
 					
 					<div class="options">
 						
