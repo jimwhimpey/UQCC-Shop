@@ -299,7 +299,10 @@
 			RECEIPT
 		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 		
-	#content.receipt { width: 760px; }
+	#content.receipt { 
+		width: 760px;
+		position: relative;	
+		}
 		
 		.receipt #bank {
 			line-height: 1.6em;
@@ -321,6 +324,19 @@
 					}
 				
 					.receipt #bank strong { font-weight: bold; }
+	
+	.receipt .payment_status {
+		font-size: 20px;
+		font-weight: bold;
+		position: absolute;
+		top: 200px;
+		right: 170px;
+		text-align: right;
+		}
+		
+		.receipt .payment_status .unpaid { color: #B91921; }
+		
+		.receipt .payment_status .paid { color: #569340; }
 	
 	.receipt #order-meta {
 		width: 300px;

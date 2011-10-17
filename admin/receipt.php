@@ -54,6 +54,15 @@
 			</div>
 			
 			
+			<div class="payment_status">
+				<?php if ($orderRecord['paid'] == "false") { ?>
+					<span class="unpaid">Unpaid</span>
+				<?php } else { ?>
+					<span class="paid">Paid</span>
+				<?php } ?>
+			</div>
+			
+			
 			<table id="order-meta">
 				<tr>
 					<td class="label">Order Number</td>
