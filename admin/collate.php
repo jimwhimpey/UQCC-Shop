@@ -8,7 +8,8 @@
 	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);
-	$orders = $DB->GetAll("SELECT * FROM " . $table . " WHERE paid = 'true'");
+	// $orders = $DB->GetAll("SELECT * FROM " . $table . " WHERE paid = 'true'");
+	$orders = $DB->GetAll("SELECT * FROM " . $table);
 	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");
@@ -55,10 +56,10 @@
 		
 		<div id="content" class="collation">			
 			
-			<h2>Collated Paid Orders</h2>
+			<h2>Collated Orders</h2>
 
 			<?php
-			
+				
 				// Loop through the types
 				foreach ($collated_items as $item => $value) {
 					
