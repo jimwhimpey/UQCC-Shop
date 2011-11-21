@@ -44,6 +44,7 @@
 				float: left;
 				padding: 30px;
 				border-right: 1px solid #999;
+				page-break-inside: avoid;
 				}
 				
 			.even { 
@@ -63,7 +64,7 @@
 				}
 				
 			ul li {
-				margin: 0 0 5px 0;
+				margin: 0 0 4px 0;
 				}
 				
 			.unpaid { color: #B91921; }
