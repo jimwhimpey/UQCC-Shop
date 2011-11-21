@@ -1,11 +1,5 @@
-.explanation,
-#kit-order,
-#kit-options {
-	display: none;
-	}
-	
 .closed {
-	display: block;
+	display: none;
 	color: #FFF;
 	background: #A30101;
 	border: 10px solid #800000;
@@ -13,7 +7,7 @@
 	-moz-border-radius: 30px;
 	border-radius: 30px;
 	padding: 30px;
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 0.2em;

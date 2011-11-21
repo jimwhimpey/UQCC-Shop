@@ -7,6 +7,8 @@
 		<title>UQ Cycle Club Kit Ordering Form</title>
 
 		<?php require("./includes/head.php"); ?>
+		
+		<link rel="stylesheet" href="styles/closed.css" type="text/css" media="screen" />
 	
 		<script type="text/javascript" charset="utf-8">
 	
@@ -18,6 +20,12 @@
 				var daysLeft = Math.round(secondsDifference/1000/60/60/24);
 				var daysLeftString = (daysLeft > 1) ? daysLeft + " days" : daysLeft + " day";
 				$(".explanation span span").text(daysLeftString);
+				
+				if (daysLeft < 0) {
+					$(".closed").show();
+					$(".explanation, #kit-order, #kit-options, .sizing").hide();
+				}
+				
 			});
 	
 		</script>
@@ -31,7 +39,7 @@
 		<div id="content">
 			
 			<div class="closed">
-				Orders Closed
+				Orders closed for now
 			</div>
 			
 			<noscript>
