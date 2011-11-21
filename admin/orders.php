@@ -13,9 +13,14 @@
 		$DB->Execute("UPDATE " . $table . " SET paid = 'false' WHERE id = '" . $_GET['unpaid'] . "'");
 	}
 	
+	// Changed collected status
+	if ($_GET['collect'] != "") {
+		$DB->Execute("UPDATE " . $table . " SET collected = 'true' WHERE id = '" . $_GET['collect'] . "'");
+	}
+	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);
-	$orders = $DB->GetAll("SELECT * FROM orders1") or die($DB->ErrorMsg());
+	$orders = $DB->GetAll("SELECT * FROM orders1 ORDER BY collected") or die($DB->ErrorMsg());
 	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");
@@ -43,24 +48,34 @@
 			
 			<table border="0" cellspacing="5" cellpadding="5">
 				<tr>
-					<th>Order ID</th>
-					<th>Date</th>
-					<th>Name</th>
-					<th>Payment Status</th>
+					<th class='orderid'>Order ID</th>
+					<th class='orderdate'>Date</th>
+					<th class='ordername'>Name</th>
+					<th class='orderpayment'>Payment Status</th>
+					<th class='ordercollection'>Collection</th>
 				</tr>
 				
 				<?php
 				
 					// Loop through the order spitting out rows
 					foreach ($orders as $order) {
-						echo "<tr>";
-							echo "<td><a href='receipt.php?order=" . $order['id'] . "'>" . $order['id'] . "</a></td>";
-							echo "<td>" . date("d/m/y", $order['date']) . "</td>";
-							echo "<td><a href='mailto:" . $order['email'] . "'>" . $order['name'] . "</a></td>";
+						if ($order['collected'] == NULL) {
+							echo "<tr>";
+						} else {
+							echo "<tr class='collected'>";
+						}
+							echo "<td class='orderid'><a href='receipt.php?order=" . $order['id'] . "'>" . $order['id'] . "</a></td>";
+							echo "<td class='orderdate'>" . date("d/m/y", $order['date']) . "</td>";
+							echo "<td class='ordername'><a href='mailto:" . $order['email'] . "'>" . $order['name'] . "</a></td>";
 							if ($order['paid'] == "false") {
-								echo "<td class='unpaid'><a href='./orders.php?paid=" . $order['id'] . "'>Unpaid</a></td>";
+								echo "<td class='orderpayment unpaid'><a href='./orders.php?paid=" . $order['id'] . "'>Unpaid</a></td>";
 							} else {
-								echo "<td class='paid'><a href='./orders.php?unpaid=" . $order['id'] . "'>Paid</a></td>";
+								echo "<td class='orderpayment paid'><a href='./orders.php?unpaid=" . $order['id'] . "'>Paid</a></td>";
+							}
+							if ($order['collected'] == NULL) {
+								echo "<td class='ordercollection collect'><a href='./orders.php?collect=" . $order['id'] . "'>Mark as Collected</a></td>";
+							} else {
+								echo "<td class='ordercollection collected'>Collected</td>";
 							}
 						echo "</tr>";
 					}

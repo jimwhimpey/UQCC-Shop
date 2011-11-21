@@ -371,6 +371,10 @@
 				line-height: 1.4em;
 				}
 				
+				.orders .orderid { width: 50px; padding-right: 30px; }
+				.orders .orderpayment { width: 110px; padding-right: 30px; }
+				.orders .ordercollection { width: 160px; padding-right: 0; }
+				
 				.receipt #order-items .item span {
 					display: block;
 					color: #999;
