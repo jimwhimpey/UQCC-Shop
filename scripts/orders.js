@@ -97,8 +97,8 @@ $(function(){
 		if (order[1] == undefined) {
 			alert("You can't order nothing!");
 		} else {
-			if ($("#kit-order input#name").attr("value") == "" || $("#kit-order input#email").attr("value") == "") {
-				alert("You must enter a name and email address so we know who's placing the order.");
+			if ($("#kit-order input#name").attr("value") == "" || $("#kit-order input#email").attr("value") == "" || $("#kit-order input#address").attr("value") == "" || $("#kit-order input#suburb").attr("value") == "" || $("#kit-order input#postcode").attr("value") == "") {
+				alert("You must fill out ALL personal and shipping information. We will be shipping all orders, there is no option for pickup.");
 			} else {
 				$("#kit-order form").submit();
 			}
