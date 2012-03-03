@@ -37,10 +37,11 @@ $(function(){
 		var total = 0;
 		for (var orderItem in order) {
 			total = total + (order[orderItem].quantity * order[orderItem].price);
-			// Add the shipping price
-			total = total + 6;
-			$("#order-total span").text("$" + total.toFixed(2));
 		}
+		
+		// Add the shipping price
+		total = total + 6;
+		$("#order-total span").text("$" + total.toFixed(2));
 		
 		// If the no items row is still in there then we 
 		// want to get rid of it and add headings.
