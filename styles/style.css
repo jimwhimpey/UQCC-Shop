@@ -22,7 +22,7 @@
 
 	@font-face {
 		font-family: 'Homestead';
-		src: url('fonts/Homestead-Regular.otf') format('opentype');
+		src: url('http://uqcycle.com/wp-content/themes/lucia/fonts/Homestead-Regular.otf') format('opentype');
 		font-weight: bold;
 		font-style: normal;
 		}

@@ -81,6 +81,8 @@
 				<form action="./server/place-order.php" method="post">
 				
 					<div id="personal-details">
+						
+						<h3>Personal Details</h3>
 					
 						<input type="hidden" name="order-field" value='' id="order-field" />
 					
@@ -91,6 +93,34 @@
 							<input type="text" name="email" id="email" value="" /></p>
 					
 					</div>
+					
+					<div id="shipping-information">
+						
+						<h3>Shipping Information</h3>
+					
+						<p><label for="address">Address:</label>
+							<input type="text" name="address" id="address" value="" /></p>
+					
+						<p><label for="suburb">Suburb:</label>
+							<input type="text" name="suburb" id="suburb" value="" /></p>
+							
+						<p><label for="postcode">Postcode:</label>
+							<input type="text" name="postcode" id="postcode" value="" /></p>
+						
+						<p>	<label for="state">State:</label>
+							<select name="state">
+								<option value="Queensland">Queensland</option>
+								<option value="New South Wales">New South Wales</option>
+								<option value="Victoria">Victoria</option>
+								<option value="Tasmania">Tasmania</option>
+								<option value="South Australia">South Australia</option>
+								<option value="Western Australia">Western Australia</option>
+								<option value="Australian Capital Territory">Australian Capital Territory</option>
+								<option value="Northern Territory">Northern Territory</option>
+							</select></p>
+					
+					</div>
+					
 				
 					<p id="place-order">					
 						<a href="#">Place Order</a>

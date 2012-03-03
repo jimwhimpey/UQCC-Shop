@@ -1,7 +1,5 @@
 $(function(){
 	
-	setupZoom();
-	
 	// On the page load setup the JSON object to hold the order
 	var order = new Object();	
 	
