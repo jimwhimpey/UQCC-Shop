@@ -6,7 +6,7 @@
 	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);
-	$result 		= $DB->Execute("SELECT * FROM orders1 WHERE id = '" . $_GET['order'] . "'") or die($DB->ErrorMsg());
+	$result 		= $DB->Execute("SELECT * FROM " . $table . " WHERE id = '" . $_GET['order'] . "'") or die($DB->ErrorMsg());
 	
 	$orderRecord	= $result->fields;
 	$order			= stripslashes(stripslashes($result->fields['order']));
@@ -64,13 +64,20 @@
 					<td><?php echo date("jS \of F, Y", $orderRecord['date']); ?></td>
 				</tr>
 				<tr>
+					<td class="label">Email</td>
+					<td><?php echo $orderRecord['email']; ?></td>
+				</tr>
+				<tr>
 					<td class="label">Name</td>
 					<td><?php echo $orderRecord['name']; ?></td>
 				</tr>
 				<tr>
-					<td class="label">Email</td>
-					<td><?php echo $orderRecord['email']; ?></td>
+					<td class="label">Shipping Address</td>
+					<td><?php echo $orderRecord['address']; ?><br />
+							<?php echo $orderRecord['suburb']; ?><br />
+							<?php echo $orderRecord['state']; ?>, <?php echo $orderRecord['postcode']; ?></td>
 				</tr>
+				
 			</table>
 			
 			
@@ -102,6 +109,10 @@
 						
 					}
 					
+					// Add shipping
+					$total = number_format($total + 6, 2);
+					
+					echo "<tr id='shipping-price'><td colspan='2' class='total'>Shipping</td><td class='shipping'>6.00</td></tr>";
 					echo "<tr id='total-price'><td colspan='2' class='total'>Grand Total</td><td class='total'>" . $total . "</td></tr>";
 				?>
 				

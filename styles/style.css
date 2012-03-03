@@ -353,16 +353,19 @@
 		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 		
 	#content.receipt { 
-		width: 760px;
+		width: 600px;
+		padding: 30px;
+		float: left;
 		position: relative;	
+		background: #FFF;
 		}
 		
 		.receipt #bank {
 			line-height: 1.6em;
 			border: 1px solid #327C26;
-			background: #CFFFE1;
+			background: #E6FFF0;
 			padding: 10px 10px 0 10px;
-			width: 100%;
+			width: 590px;
 			margin: 0 0 42px;
 			}
 		
@@ -392,7 +395,8 @@
 		.receipt .payment_status .paid { color: #569340; }
 	
 	.receipt #order-meta {
-		width: 300px;
+		width: 400px;
+		line-height: 1.5em;
 		margin: 0 0 42px 0;
 		border-top: 1px solid #CCC;
 		border-left: 1px solid #CCC;
@@ -435,9 +439,11 @@
 				
 				.receipt #order-items .quantity { text-align: center; }
 				
-				.receipt #order-items .total { text-align: right; }
+				.receipt #order-items .total,
+				.receipt #order-items .shipping { text-align: right; }
 				
-			.receipt #order-items #total-price td {
+			.receipt #order-items #total-price td,
+			.receipt #order-items #shipping-price td {
 				border-bottom: none;
 				}
 

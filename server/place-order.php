@@ -6,22 +6,27 @@
 	require("./db.php");
 	
 	// If there's no username, email or order don't do anything
-	if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['order-field'])) {
-		die("Order error: Either no name, email or order. How did you get here?!");
+	if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['order-field']) || empty($_POST['address']) || empty($_POST['suburb']) || empty($_POST['postcode'])) {
+		die("Order error: Missing order details, go back and do it again.");
 	}
 	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");
 	
 	// Grab all the vars we'll insert into the DB
-	$record['id']		= generateOrderNumber();
-	$record['date']		= time();
-	$record['name']		= mysql_real_escape_string($_POST['name']);
-	$record['email']	= mysql_real_escape_string($_POST['email']);
-	$record['order']	= mysql_real_escape_string(json_encode($_POST['order-field']));
+	$record['id']				= generateOrderNumber();
+	$record['date']			= time();
+	$record['name']			= mysql_real_escape_string($_POST['name']);
+	$record['email']		= mysql_real_escape_string($_POST['email']);
+	$record['order']		= mysql_real_escape_string(json_encode($_POST['order-field']));
+	$record['paid']			= "false";
+	$record['address']	= mysql_real_escape_string($_POST['address']);
+	$record['suburb']		= mysql_real_escape_string($_POST['suburb']);
+	$record['postcode']	= mysql_real_escape_string($_POST['postcode']);
+	$record['state']		= mysql_real_escape_string($_POST['state']);
 
 	// Insert them all into the DB
-	$SQL = "INSERT INTO orders1 VALUES ('" . $record['id'] . "', " . $record['date'] . ", '" . $record['name'] . "', '" . $record['email'] . "', '" . $record['order'] . "', 'false')";
+	$SQL = "INSERT INTO orders2 VALUES ('" . $record['id'] . "', " . $record['date'] . ", '" . $record['name'] . "', '" . $record['email'] . "', '" . $record['order'] . "', 'false', '" . $record['address'] . "', '" . $record['suburb'] . "', '" . $record['postcode'] . "', '" . $record['state'] . "')";
 	$DB->Execute($SQL) or die($DB->ErrorMsg());
 	
 	// Create the order output
@@ -41,20 +46,30 @@
 		$orderOutput .= "Total: $" . $item->{'quantity'} * $item->{'price'} . "\n\n";
 		$total = $total + ($item->{'quantity'} * $item->{'price'});	
 	}
+	// Add shipping to the total
+	$total = $total + 6;
 	$orderOutput .= "==================================================\n\n";
 	$orderOutput .= "Order total: $" . $total . "\n\n"; 
 	$orderOutput .= "==================================================\n\n";
+	
+	// Prepare shipping details
+	$shippingContent = "Shipping to:\n\n";
+	$shippingContent .= $record['name'] . "\n";
+	$shippingContent .= $record['address'] . "\n";
+	$shippingContent .= $record['suburb'] . "\n";
+	$shippingContent .= $record['state'] . ", " . $record['postcode']  . "\n\n";
 	
 	// Compose and send an email to the buyer
 	$buyerContent = "Thanks for placing an order for UQ Cycle Club kit.\n\n";
 	$buyerContent .= "Your order is as follows: \n\n";
 	$buyerContent .= $orderOutput;
+	$buyerContent .= $shippingContent;
 	$buyerContent .= "Please pay for your order with a bank transfer to the club's account:\n\n";
 	$buyerContent .= "Account Name: UNIVERSITY OF QUEENSLAND CYCLING CLUB\n";
 	$buyerContent .= "Account Number: 00911144\n";
 	$buyerContent .= "BSB: 064-158\n";
 	$buyerContent .= "Reference: " . $record['id'] . " and your surname\n\n";
-	$buyerContent .= "We'll be in touch when your order is ready to be picked up.\n\n";
+	$buyerContent .= "We'll ship your order to you when it's ready.\n\n";
 	$buyerContent .= "UQ Cycle Club";
 	
 	// Compose and send an email to the exec
@@ -64,6 +79,7 @@
 	$execContent .= "Date: " . date("g:ia d/m/y") . "\n\n";
 	$execContent .= "Order details: \n\n";
 	$execContent .= $orderOutput;
+	$execContent .= $shippingContent;
 	$execContent .= "Thanks,\n\n";
 	$execContent .= "The Kit Order Robot";
 	

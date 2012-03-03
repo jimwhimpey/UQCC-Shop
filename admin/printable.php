@@ -8,7 +8,7 @@
 	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);
-	$orders = $DB->GetAll("SELECT * FROM orders1") or die($DB->ErrorMsg());
+	$orders = $DB->GetAll("SELECT * FROM orders2") or die($DB->ErrorMsg());
 	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");

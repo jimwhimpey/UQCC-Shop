@@ -20,7 +20,7 @@
 	
 	// Get this order's record
 	$DB->SetFetchMode(ADODB_FETCH_ASSOC);
-	$orders = $DB->GetAll("SELECT * FROM orders1 ORDER BY collected") or die($DB->ErrorMsg());
+	$orders = $DB->GetAll("SELECT * FROM " . $table) or die($DB->ErrorMsg());
 	
 	// I get a warning otherwise
 	date_default_timezone_set("Australia/Brisbane");
@@ -52,7 +52,6 @@
 					<th class='orderdate'>Date</th>
 					<th class='ordername'>Name</th>
 					<th class='orderpayment'>Payment Status</th>
-					<th class='ordercollection'>Collection</th>
 				</tr>
 				
 				<?php
@@ -64,18 +63,13 @@
 						} else {
 							echo "<tr class='collected'>";
 						}
-							echo "<td class='orderid'><a href='receipt.php?order=" . $order['id'] . "'>" . $order['id'] . "</a></td>";
+							echo "<td class='orderid'><a href='../receipt.php?order=" . $order['id'] . "'>" . $order['id'] . "</a></td>";
 							echo "<td class='orderdate'>" . date("d/m/y", $order['date']) . "</td>";
 							echo "<td class='ordername'><a href='mailto:" . $order['email'] . "'>" . $order['name'] . "</a></td>";
 							if ($order['paid'] == "false") {
 								echo "<td class='orderpayment unpaid'><a href='./orders.php?paid=" . $order['id'] . "'>Unpaid</a></td>";
 							} else {
 								echo "<td class='orderpayment paid'><a href='./orders.php?unpaid=" . $order['id'] . "'>Paid</a></td>";
-							}
-							if ($order['collected'] == NULL) {
-								echo "<td class='ordercollection collect'><a href='./orders.php?collect=" . $order['id'] . "'>Mark as Collected</a></td>";
-							} else {
-								echo "<td class='ordercollection collected'>Collected</td>";
 							}
 						echo "</tr>";
 					}
