@@ -1,5 +1,3 @@
-<div id="footer">Made by <a href="http://jimwhimpey.com">Jim Whimpey</a></div>
-
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

@@ -21,10 +21,10 @@
 				var daysLeftString = (daysLeft > 1) ? daysLeft + " days" : daysLeft + " day";
 				$(".explanation span span").text(daysLeftString);
 				
-				if (daysLeft < 0) {
-					$(".closed").show();
-					$(".explanation, #kit-order, #kit-options, .sizing").hide();
-				}
+				// if (daysLeft < 0) {
+				// 					$(".closed").show();
+				// 					$(".explanation, #kit-order, #kit-options, .sizing").hide();
+				// 				}
 				
 			});
 	
@@ -35,6 +35,13 @@
 	<body>
 		
 		<?php require("./includes/header.php"); ?>
+		
+		<div class="blurb">
+			<p>After placing your order you'll be given an order number which must 
+				be used as the reference in a bank transfer to the club's account. We'll <strong>ship your order
+				to you</strong> when it's ready.</p>
+		</div>
+		
 		
 		<div id="content">
 			
@@ -60,13 +67,6 @@
 					</style>
 			
 			</noscript>
-			
-			
-			<p class="explanation">After placing your order you'll be given an order number which must 
-				be used as the reference in a bank transfer to the club's account. We'll email when your 
-				order is ready. <span>Orders close in <span></span></span>.</p>
-			
-			
 			
 			
 			
@@ -148,7 +148,7 @@
 					</div>
 					
 					<a href="./images/inventory/large/jersey.png" class="image">
-						<img src="./images/inventory/jersey.png" alt="Short Sleeve Jersey" />
+						<img src="./images/inventory/jersey.png" alt="Short Sleeve Jersey" width="150" height="150" />
 					</a>
 					
 				</div>
@@ -189,7 +189,7 @@
 					</div>
 					
 					<a href="./images/inventory/large/jersey.png" class="image">
-						<img src="./images/inventory/jersey.png" alt="Short Sleeve Jersey" />
+						<img src="./images/inventory/jersey.png" alt="Short Sleeve Jersey"  width="150" height="150" />
 					</a>
 					
 				</div>
@@ -234,7 +234,7 @@
 					</div>
 					
 					<a href="./images/inventory/large/bibs.png" class="image">
-						<img src="./images/inventory/bibs.png" alt="Bib Knicks" />
+						<img src="./images/inventory/bibs.png" alt="Bib Knicks" width="150" height="150" />
 					</a>
 					
 				</div>
@@ -278,11 +278,126 @@
 					</div>
 					
 					<a href="./images/inventory/large/bibs.png" class="image">
-						<img src="./images/inventory/bibs.png" alt="Bib Knicks" />
+						<img src="./images/inventory/bibs.png" alt="Bib Knicks"  width="150" height="150" />
 					</a>
 					
 				</div>
 				
+				
+				
+				
+				
+				
+				
+				<div class="option">
+					
+					<div class="image"></div>
+					<h2><span>Arm Warmers</span> <span class="price">($30)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+						<p class="add-to-order"><a href="#">Add to Order</a></p>
+						
+					</div>
+					
+					<a href="./images/inventory/large/armwarmers.png" class="image">
+						<img src="./images/inventory/armwarmers.png" alt="Arm Warmers"  width="150" height="150" />
+					</a>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<div class="option">
+					
+					<div class="image"></div>
+					<h2><span>Shoe Covers</span> <span class="price">($30)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+						<p class="add-to-order"><a href="#">Add to Order</a></p>
+						
+					</div>
+					
+					<a href="./images/inventory/large/shoecovers.png" class="image">
+						<img src="./images/inventory/shoecovers.png" alt="Shoe Covers"  width="150" height="150" />
+					</a>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				<div class="option">
+					
+					<div class="image"></div>
+					<h2><span>Socks (5" cuff, Defeet)</span> <span class="price">($15)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+						<p class="add-to-order"><a href="#">Add to Order</a></p>
+						
+					</div>
+					
+					<a href="./images/inventory/large/socks.png" class="image">
+						<img src="./images/inventory/socks.png" alt="Socks"  width="150" height="150" />
+					</a>
+					
+				</div>
 				
 			
 				
