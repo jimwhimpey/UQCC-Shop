@@ -37,6 +37,8 @@ $(function(){
 		var total = 0;
 		for (var orderItem in order) {
 			total = total + (order[orderItem].quantity * order[orderItem].price);
+			// Add the shipping price
+			total = total + 6;
 			$("#order-total span").text("$" + total.toFixed(2));
 		}
 		
@@ -49,12 +51,18 @@ $(function(){
 			$("#kit-order table").append("<tr><th class='item'>Item</th><th class='qty'>Qty</th><th class='total'>Total</th></tr>");
 		}
 		
+		// Scroll up to the order form
+		$('html, body').animate({
+			scrollTop: $("#kit-order").offset().top - 30
+		}, 1000);
+		
+		
 		// Add the item to the order visually
 		$("#kit-order table").append("<tr><td class='item'>" + item.name + " <span>" + item.size + "</span></td><td class='qty'>" + item.quantity + "</td><td class='total'>" + (item.quantity * item.price).toFixed(2) + "</td></tr>");
-		$("#kit-order table tr:last-child td").css("backgroundColor", "#FF6").animate({"backgroundColor": "#F3F3F3"}, 1000);
+		$("#kit-order table tr:last-child td").css("backgroundColor", "#FF6").animate({"backgroundColor": "#FFF"}, 2000);
 		
 		// Fade the background colour off everything, sometimes they get stuck
-		$("#kit-order table tr td").animate({"backgroundColor": "#F3F3F3"}, 1000);
+		$("#kit-order table tr td").animate({"backgroundColor": "#FFF"}, 2000);
 		
 		// Kill default behaviour
 		return false;

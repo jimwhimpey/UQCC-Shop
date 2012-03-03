@@ -121,6 +121,10 @@
 					
 					</div>
 					
+					<div id="shipping-price">
+						<p>Australia Post Standard Shipping: <span>$6</span></p>
+					</div>
+					
 				
 					<p id="place-order">					
 						<a href="#">Place Order</a>

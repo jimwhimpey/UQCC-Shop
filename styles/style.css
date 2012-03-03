@@ -266,28 +266,54 @@
 				}
 			
 		#personal-details, 
+		#shipping-information,
+		#shipping-price,
 		#place-order,
 		#kit-order table {
 			border-top: 1px dashed #ABABAB;
-			padding: 15px 0 0 0;
-			margin: 15px 0 0 0;
+			padding: 20px 0 0 0;
+			margin: 20px 0 0 0;
 			}
 			
-			#personal-details p {
+			#personal-details h3, 
+			#shipping-information h3 {
+				font-weight: bold;
+				font-size: 14px;
+				margin: 0 0 10px 0;
+			}
+			
+			#personal-details p,
+			#shipping-information p,
+			#shipping-price p {
 				margin: 0 0 10px 0;
 				font-size: 12px;
-				color: #848484;
-				}
-			
-			#personal-details label { display: block; }
-			
-			#personal-details input {
-				width: 268px;
-				border: 1px solid #CCC;
-				padding: 5px;
+				color: #666;
 				}
 				
-			#place-order { position: relative; }
+				#shipping-price p { font-weight: bold; }
+				#shipping-price p span { font-weight: normal; }
+			
+			#personal-details label,
+			#shipping-information label { 
+				display: block;
+				margin: 0 0 3px 0;
+			}
+			
+			#personal-details input,
+			#shipping-information input {
+				width: 268px;
+				border: 1px solid #CCC;
+				background: #EFEFEF;
+				padding: 5px;
+				font-family: Monaco, Consolas, Courier, monospace;
+				font-size: 14px;
+				}
+				
+				#shipping-information input#postcode { width: 100px; }
+				
+			#place-order { 
+				position: relative;
+			}
 			
 				#place-order a {
 					float: right;
@@ -306,7 +332,7 @@
 					display: none;
 					}
 					
-					#order-total span { font-weight: normal; }
+					#order-total span{ font-weight: normal; }
 				
 			#clear-order {
 				clear: right;
