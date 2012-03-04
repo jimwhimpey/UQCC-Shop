@@ -11,6 +11,7 @@ $(function(){
 		var price		= $(this).parent().parent().parent().find("h2 span.price").text();
 		var size		= $(this).parent().parent().parent().find("select[name=size] option:selected").text();
 		var quantity	= $(this).parent().parent().parent().find("select[name=quantity] option:selected").text();
+		var cut				= $(this).parent().parent().parent().find("select[name=cut] option:selected").text();
 		
 		// Get the raw price number
 		price = price.replace(/^\(\$|\)/g, "");
@@ -19,7 +20,8 @@ $(function(){
 		var item	= {	"name": 	name,
 						"price": 	price,
 						"size": 	size,
-						"quantity": quantity
+						"quantity": quantity,
+						"cut": cut
 						};
 							
 		// Find out how many items are in the order and add this item
@@ -60,6 +62,9 @@ $(function(){
 		
 		// Add the item to the order visually
 		$("#kit-order table").append("<tr><td class='item'>" + item.name + " <span>" + item.size + "</span></td><td class='qty'>" + item.quantity + "</td><td class='total'>" + (item.quantity * item.price).toFixed(2) + "</td></tr>");
+		if (cut) {
+			$("#kit-order table tr:last-child td.item span").append(" &mdash; " + cut);
+		}
 		$("#kit-order table tr:last-child td").css("backgroundColor", "#FF6").animate({"backgroundColor": "#FFF"}, 2000);
 		
 		// Fade the background colour off everything, sometimes they get stuck

@@ -180,7 +180,7 @@
 				}
 			
 				.options p {
-					width: 115px;
+					width: 80px;
 					float: left;
 					overflow: hidden;
 					margin: 0 10px 5px 0;
@@ -190,13 +190,15 @@
 					
 					.options p.cut { width: 80px; }
 				
+					.options p.add-to-order { width: 115px; }
+				
 					.options label {
 						display: block;
 						margin: 0 0 3px 0;
 						color: #848484;
 						}
 				
-					.options select { width: 115px; }
+					.options select { width: 80px; }
 					
 						.options p.quantity select { width: 60px; }
 						

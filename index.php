@@ -167,6 +167,12 @@
 								<option value="Small">Small</option>
 								<option value="X Small">X Small</option>
 							</select></p>
+							
+						<p class="cut">	<label for="cut">Cut:</label>
+							<select name="cut">
+								<option value="Club Cut">Club Cut</option>
+								<option value="Race Cut">Race Cut</option>
+							</select></p>
 						
 						<p class="quantity"><label for="quantity">Quantity:</label>
 							<select name="quantity">
@@ -207,6 +213,12 @@
 								<option value="Medium" selected="selected">Medium</option>
 								<option value="Small">Small</option>
 								<option value="X Small">X Small</option>
+							</select></p>
+							
+						<p class="cut">	<label for="cut">Cut:</label>
+							<select name="cut">
+								<option value="Club Cut">Club Cut</option>
+								<option value="Race Cut">Race Cut</option>
 							</select></p>
 						
 						<p class="quantity"><label for="quantity">Quantity:</label>
