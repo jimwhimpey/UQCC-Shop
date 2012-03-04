@@ -36,9 +36,19 @@
 	h1#header {
 		height: 130px;
 		width: 1000px;
-		background: #ABD4F0 url(http://uqcycle.com/wp-content/themes/lucia/images/logo.gif) no-repeat center -125px;
 		text-indent: -9999px;
 		}
+		
+		h1#header a {
+			display: block;
+			height: 130px;
+			width: 1000px;
+			background: #ABD4F0 url(http://uqcycle.com/wp-content/themes/lucia/images/logo.gif) no-repeat center -125px;
+			text-indent: -9999px;
+			}
+		
+			h1#header a:hover { background-position: center 25px; }
+		
 		
 	p#subheader {
 		width: 100%;
