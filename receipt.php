@@ -49,7 +49,8 @@
 					<li>BSB: <strong>064-158</strong></li>
 				</ul>
 				
-				<p>You will be emailed when your order is ready to be picked up.</p>
+				<p>This receipt has been emailed to you. Your order will be shipped to you when ready. Please check 
+				<a href="http://uqcycle.com/news/">the latest club news</a> for general kit order updates.</p>
 					
 			</div>
 			

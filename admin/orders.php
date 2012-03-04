@@ -42,7 +42,7 @@
 		
 		<?php require("../includes/header.php"); ?>
 		
-		<div id="content" class="orders">			
+		<div id="content" class="orders">	
 			
 			<h2>All Orders</h2>
 			

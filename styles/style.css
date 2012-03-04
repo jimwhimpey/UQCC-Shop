@@ -452,24 +452,32 @@
 			ORDERS Table
 		++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */				
 	
-	.orders table td { padding-right: 50px; }
+	.orders,
+	.collation {
+		background: #FFF;
+		padding: 30px;
+		width: 570px !important;
+		float: left;
+		}
 	
-		.orders table td a { 
-			text-decoration: none;
-			color: blue;	
-			}
+		.orders table td { padding-right: 50px; }
+	
+			.orders table td a { 
+				text-decoration: none;
+				color: blue;	
+				}
 		
-			.orders table td a:hover { border-bottom: 1px solid #333; }
+				.orders table td a:hover { border-bottom: 1px solid #333; }
 	
-		.orders table td.paid a,
-		.orders table td.unpaid a {
-			font-weight: bold;
-			text-decoration: none;
-			}
+			.orders table td.paid a,
+			.orders table td.unpaid a {
+				font-weight: bold;
+				text-decoration: none;
+				}
 			
-			.orders table td.paid a { color: #569340; }
+				.orders table td.paid a { color: #569340; }
 			
-			.orders table td.unpaid a { color: #B91921; }
+				.orders table td.unpaid a { color: #B91921; }
 			
 
 /* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

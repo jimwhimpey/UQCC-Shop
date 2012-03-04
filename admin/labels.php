@@ -26,7 +26,7 @@
 			body {
 				font-family: Helvetica, Arial, sans-serif;
 				font-weight: bold;
-				font-size: 20px;
+				font-size: 24px;
 				width: 1000px;
 				margin: 30px;
 				}
@@ -37,6 +37,7 @@
 				overflow: hidden;
 				border-bottom: 1px solid #999;	
 				page-break-inside: avoid;
+				line-height: 1.5em;
 				}
 			
 			.label {
@@ -57,10 +58,6 @@
 				font-weight: normal;
 				margin: 0 0 3px 0;
 				color: #666;
-				}
-			
-			.ordername {
-				font-size: 34px;
 				}
 				
 			ul li {
@@ -84,27 +81,10 @@
 			foreach ($orders as $order) {
 				if ($oddeven == "odd") { echo "<div class='row'>"; }
 				echo "<div class='label " . $oddeven . "'>";
-					echo "<div class='orderid'>" . $order['id'] . "</div>";
 					echo "<div class='ordername'>" . $order['name'] . "</div>";
-					
-					$items = stripslashes(stripslashes($order['order']));
-					$items = preg_replace('/^\"|\"$/i', "", $items);
-					$items = preg_replace('/Men\'s/i', "Men's", $items);
-					$items = preg_replace('/Women\'s/i', "Women's", $items);
-					$items = json_decode($items);
-					
-					echo "<ul>";
-					foreach ($items as $item) {
-						echo "<li>" . $item->{'quantity'} . " x " . $item->{'name'} . " (" . $item->{'size'} . ")</li>";						
-					}
-					echo "</ul>";
-					
-					if ($order['paid'] == "false") {
-						echo "<div class='orderpayment unpaid'>Unpaid</div>";
-					} else {
-						echo "<div class='orderpayment paid'>Paid</div>";
-					}
-					
+					echo "<div class='address'>" . $order['address'] . "</div>";
+					echo "<div class='suburb'>" . $order['suburb'] . "</div>";
+					echo "<div class='state'>" . $order['state'] . ", " . $order['postcode'] . "</div>";
 				echo "</div>";
 				if ($oddeven == "even") { echo "</div>"; }
 				
