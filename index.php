@@ -87,10 +87,10 @@
 						<input type="hidden" name="order-field" value='' id="order-field" />
 					
 						<p><label for="name">Your Name:</label>
-							<input type="text" name="name" id="name" value="Jim" /></p>
+							<input type="text" name="name" id="name" value="" /></p>
 					
 						<p><label for="email">Your Email Address:</label>
-							<input type="text" name="email" id="email" value="jimwhimpey@me.com" /></p>
+							<input type="text" name="email" id="email" value="" /></p>
 					
 					</div>
 					
@@ -99,13 +99,13 @@
 						<h3>Shipping Information</h3>
 					
 						<p><label for="address">Address:</label>
-							<input type="text" name="address" id="address" value="7/2 Campbell Street" /></p>
+							<input type="text" name="address" id="address" value="" /></p>
 					
 						<p><label for="suburb">Suburb:</label>
-							<input type="text" name="suburb" id="suburb" value="Toowong" /></p>
+							<input type="text" name="suburb" id="suburb" value="" /></p>
 							
 						<p><label for="postcode">Postcode:</label>
-							<input type="text" name="postcode" id="postcode" value="4066" /></p>
+							<input type="text" name="postcode" id="postcode" value="" /></p>
 						
 						<p>	<label for="state">State:</label>
 							<select name="state">
