@@ -42,7 +42,7 @@ $(function(){
 		}
 		
 		// Add the shipping price
-		total = total + 6;
+		total = total + 8;
 		$("#order-total span").text("$" + total.toFixed(2));
 		
 		// If the no items row is still in there then we 

@@ -115,9 +115,9 @@
 					}
 					
 					// Add shipping
-					$total = number_format($total + 6, 2);
+					$total = number_format($total + 8, 2);
 					
-					echo "<tr id='shipping-price'><td colspan='2' class='total'>Shipping</td><td class='shipping'>6.00</td></tr>";
+					echo "<tr id='shipping-price'><td colspan='2' class='total'>Shipping</td><td class='shipping'>8.00</td></tr>";
 					echo "<tr id='total-price'><td colspan='2' class='total'>Grand Total</td><td class='total'>" . $total . "</td></tr>";
 				?>
 				

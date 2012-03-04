@@ -51,7 +51,7 @@
 		$total = $total + ($item->{'quantity'} * $item->{'price'});	
 	}
 	// Add shipping to the total
-	$total = $total + 6;
+	$total = $total + 8;
 	$orderOutput .= "==================================================\n\n";
 	$orderOutput .= "Order total: $" . $total . "\n\n"; 
 	$orderOutput .= "==================================================\n\n";
