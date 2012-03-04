@@ -1,5 +1,7 @@
 <meta name="robots" content="noindex" />
 
+<link rel="icon" type="image/png" href="../images/favicon.png" />
+
 <link rel="stylesheet" type="text/css" media="screen, projection" href="../styles/style.css" />
 <!--<link rel="stylesheet" type="text/css" media="screen, projection" href="../styles/closed.css" />-->
 
