@@ -159,8 +159,6 @@
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
-								<option value="XXX Large">XXX Large</option>
-								<option value="XX Large">XX Large</option>
 								<option value="X Large">X Large</option>
 								<option value="Large">Large</option>
 								<option value="Medium" selected="selected">Medium</option>
@@ -206,8 +204,6 @@
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
-								<option value="XXX Large">XXX Large</option>
-								<option value="XX Large">XX Large</option>
 								<option value="X Large">X Large</option>
 								<option value="Large">Large</option>
 								<option value="Medium" selected="selected">Medium</option>
@@ -257,9 +253,6 @@
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
-								<option value="XXX Large">XXX Large</option>
-								<option value="XX Large">XX Large</option>
-								<option value="X Large">X Large</option>
 								<option value="Large">Large</option>
 								<option value="Medium" selected="selected">Medium</option>
 								<option value="Small">Small</option>
@@ -301,9 +294,6 @@
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
-								<option value="XXX Large">XXX Large</option>
-								<option value="XX Large">XX Large</option>
-								<option value="X Large">X Large</option>
 								<option value="Large">Large</option>
 								<option value="Medium" selected="selected">Medium</option>
 								<option value="Small">Small</option>
@@ -328,6 +318,45 @@
 					</a>
 					
 				</div>
+				
+				
+				
+				
+				
+				
+				<div class="option">
+					
+					<div class="image"></div>
+					<h2><span>Vest</span> <span class="price">($90)</span></h2>
+					
+					<div class="options">
+						
+						<p>	<label for="size">Size:</label>
+							<select name="size">
+								<option value="Large">Large</option>
+								<option value="Medium" selected="selected">Medium</option>
+								<option value="Small">Small</option>
+							</select></p>
+							
+						<p class="quantity"><label for="quantity">Quantity:</label>
+							<select name="quantity">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select></p>
+						
+						<p class="add-to-order"><a href="#">Add to Order</a></p>
+						
+					</div>
+					
+					<a href="./images/inventory/large/vest.png" class="image">
+						<img src="./images/inventory/vest.png" alt="Vest"  width="150" height="150" />
+					</a>
+					
+				</div>
+				
 				
 				
 				
@@ -383,9 +412,7 @@
 						
 						<p>	<label for="size">Size:</label>
 							<select name="size">
-								<option value="Large">Large</option>
-								<option value="Medium" selected="selected">Medium</option>
-								<option value="Small">Small</option>
+								<option value="One Size">One Size Fits All</option>
 							</select></p>
 							
 						<p class="quantity"><label for="quantity">Quantity:</label>
