@@ -41,11 +41,7 @@
 	$orderOutput	= "==================================================\n\n";
 	// Loop through the order spitting out rows
 	foreach ($order as $item) {
-		if ($item->{'cut'}) {
-			$orderOutput .= "Item: " . $item->{'name'} . " - " . $item->{'size'} . " — " . $item->{'cut'} . " \n";
-		} else {
-			$orderOutput .= "Item: " . $item->{'name'} . " - " . $item->{'size'} . " \n";
-		}
+		$orderOutput .= "Item: " . $item->{'name'} . " - " . $item->{'size'} . " \n";
 		$orderOutput .= "Quantity: " . $item->{'quantity'} . "\n";
 		$orderOutput .= "Total: $" . $item->{'quantity'} * $item->{'price'} . "\n\n";
 		$total = $total + ($item->{'quantity'} * $item->{'price'});	
@@ -53,6 +49,7 @@
 	// Add shipping to the total
 	$total = $total + 8;
 	$orderOutput .= "==================================================\n\n";
+	$orderOutput .= "Shipping: $8\n\n"; 
 	$orderOutput .= "Order total: $" . $total . "\n\n"; 
 	$orderOutput .= "==================================================\n\n";
 	
@@ -90,6 +87,7 @@
 	// Actually mail this stuff out the the peeps
 	mail($record['email'], "Kit Order " . $record['id'], $buyerContent, "From:UQCC Shop<tech@uqcycle.com>");
 	mail("tech@uqcycle.com", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
+	// mail("scott.dobeli@bigpond.com.au", "Kit Order " . $record['id'], $execContent, "From:UQCC Shop<tech@uqcycle.com>");
 	
 	// Redirect them to a confirmation page with their order ID
 	header("Location: ../receipt.php?order=" . $record['id']);

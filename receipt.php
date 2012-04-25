@@ -100,11 +100,7 @@
 						echo "<tr>";
 						
 							echo "<td class='item'>" . $item->{'name'} . " ";
-							if ($item->{'cut'}) {
-								echo "<span>" . $item->{'size'} . " &mdash; " . $item->{'cut'} . "</span></td>";
-							} else {
-								echo "<span>" . $item->{'size'} . "</span></td>";
-							}
+							echo "<span>" . $item->{'size'} . "</span></td>";
 							echo "<td class='quantity'>" . $item->{'quantity'} . "</td>";
 							echo "<td class='total'>" . number_format($item->{'quantity'} * $item->{'price'}, 2) . "</td>";
 						
